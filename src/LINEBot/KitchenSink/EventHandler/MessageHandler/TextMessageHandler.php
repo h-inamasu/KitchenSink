@@ -116,7 +116,7 @@ error_log("----- Get user id");
         $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
 error_log("     richMenuId=".$richMenuId);
 error_log("----- Upload Richmenu Image");
-	$res=$this->bot->uploadRichMenuImage($richMenuId,'https://onepiece-linebot.herokuapp.com/controller_01.png','img/png');
+	$res=$this->bot->uploadRichMenuImage($richMenuId,'https://onepiece-linebot.herokuapp.com/rich_menu.png','img/png');
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP staus=200");
 }
