@@ -130,7 +130,15 @@ error_log("----- 3333333333");
                 ]
             )
         );
-var_dump($res);
+if ($res->getHTTPStatus()==200) {
+error_log("200 200 200");
+}
+if ($res->isSucceeded()==true) {
+error_log("true true true");
+}
+if ($res->getJSONDecodeBody()['status']==200) {
+error_log("JSON 200");
+}
 error_log("---------- END");
                 break;
             case 'profile':
