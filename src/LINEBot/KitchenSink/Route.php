@@ -77,6 +77,7 @@ error_log("====== callback");
                 return $res->withStatus(400, "Invalid event request");
             }
 
+error_log("*******************************************");
             foreach ($events as $event) {
                 /** @var EventHandler $handler */
                 $handler = null;
