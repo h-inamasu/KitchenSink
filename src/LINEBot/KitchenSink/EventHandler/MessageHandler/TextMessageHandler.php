@@ -130,6 +130,7 @@ error_log("----- 3333333333");
                 ]
             )
         );
+var_dump($res);
 error_log("---------- END");
                 break;
             case 'profile':
