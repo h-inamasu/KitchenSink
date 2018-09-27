@@ -54,7 +54,9 @@ class Route
 {
     public function register(\Slim\App $app)
     {
+error_log("====== Route::register()");
         $app->post('/callback', function (\Slim\Http\Request $req, \Slim\Http\Response $res) {
+error_log("====== callback");
             /** @var LINEBot $bot */
             $bot = $this->bot;
             /** @var \Monolog\Logger $logger */
