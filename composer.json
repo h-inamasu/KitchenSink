@@ -52,7 +52,7 @@
       "LINE\\": "src/"
     }
   },
-  "autoload-dev": {
+  "_autoload-dev": {
     "psr-4": {
       "LINE\\Tests\\": "tests/"
     }
