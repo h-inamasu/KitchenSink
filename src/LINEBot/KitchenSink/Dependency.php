@@ -25,7 +25,6 @@ class Dependency
 {
     public function register(\Slim\App $app)
     {
-error_log("===== Dependency::register()");
         $container = $app->getContainer();
 
         $container['logger'] = function ($c) {
@@ -45,7 +44,6 @@ error_log("===== Dependency::register()");
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
             ]);
-error_log("oxoxoxoxoxoxooxoxoxoxoxoxoxo");
             return $bot;
         };
     }
