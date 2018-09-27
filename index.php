@@ -22,6 +22,7 @@ use LINE\LINEBot\KitchenSink\Setting;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+error_log("Start of index.php");
 $setting = Setting::getSetting();
 $app = new \Slim\App($setting);
 
