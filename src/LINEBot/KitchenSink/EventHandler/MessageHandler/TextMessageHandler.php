@@ -103,27 +103,27 @@ error_log("----- Create Richmenu");
             )
         );
 if ($res->getHTTPStatus()==200) {
-error_log("200 200 200");
+error_log("     HTTP status=200");
 }
 if ($res->isSucceeded()==true) {
-error_log("true true true");
+error_log("     isSucceeded=true");
 }
-if ($res->getJSONDecodeBody()['status']==200) {
-error_log("JSON 200");
-}
+//if ($res->getJSONDecodeBody()['status']==200) {
+//error_log("JSON 200");
+//}
 error_log("----- Get user id");
         $userId=$this->textMessage->getUserId();
 error_log("----- Upload Richmenu Image");
 	$res=$this->bot->uploadRichMenuImage($userId,'/controller_01.png','img/png');
 if ($res->getHTTPStatus()==200) {
-error_log("200 200 200");
+error_log("     HTTP staus=200");
 }
 if ($res->isSucceeded()==true) {
-error_log("true true true");
+error_log("     isSucceeded=true");
 }
-if ($res->getJSONDecodeBody()['status']==200) {
-error_log("JSON 200");
-}
+//if ($res->getJSONDecodeBody()['status']==200) {
+//error_log("JSON 200");
+//}
 error_log("----- Completed");
                 break;
             case 'profile':
