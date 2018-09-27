@@ -54,7 +54,6 @@ class Route
 {
     public function register(\Slim\App $app)
     {
-error_log("====== Route::register()");
         $app->post('/callback', function (\Slim\Http\Request $req, \Slim\Http\Response $res) {
 error_log("====== callback");
             /** @var LINEBot $bot */
@@ -63,6 +62,7 @@ error_log("====== callback");
             $logger = $this->logger;
 
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
+error_log("===== 00000000000");
             if (empty($signature)) {
                 $logger->info('Signature is missing');
                 return $res->withStatus(400, 'Bad Request');
