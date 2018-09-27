@@ -51,6 +51,7 @@ class LINEBot
      */
     public function __construct(HTTPClient $httpClient, array $args)
     {
+error_log("====== LINEBot::__construct()");
         $this->httpClient = $httpClient;
         $this->channelSecret = $args['channelSecret'];
 
@@ -58,6 +59,7 @@ class LINEBot
         if (array_key_exists('endpointBase', $args) && !empty($args['endpointBase'])) {
             $this->endpointBase = $args['endpointBase'];
         }
+error_log("ooooo LINEBot::__construct()");
     }
 
     /**
