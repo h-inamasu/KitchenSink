@@ -78,6 +78,28 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
+            case 'rich':
+error_log("----- rich detected.");
+        $res=$this->bot->createRichMenu(
+            new RichMenuBuilder(
+                RichMenuSizeBuilder::getFull(),
+                true,
+                'Nice richmenu',
+                'Tap to open',
+                [
+                    new RichMenuAreaBuilder(
+                        new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                        new MessageTemplateActionBuilder('message label','test message')
+                    ),
+                    new RichMenuAreaBuilder(
+                        new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                        new MessageTemplateActionBuilder('message label 2','test message 2')
+                    )
+                ]
+            )
+        );
+error_log("---------- END");
+                break;
             case 'profile':
                 $userId = $this->textMessage->getUserId();
                 $this->sendProfile($replyToken, $userId);
