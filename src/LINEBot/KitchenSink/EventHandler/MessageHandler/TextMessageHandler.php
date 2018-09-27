@@ -80,6 +80,12 @@ class TextMessageHandler implements EventHandler
         switch ($text) {
             case 'rich':
 error_log("----- rich detected.");
+error_log("      START");
+        $label=new RichMenuAreaBuilder(
+                   new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                   new MessageTemplateActionBuilder('message label','test message')
+               );
+error_log("----- 0000000000");
         $label2=new RichMenuAreaBuilder(
                     new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
                     new MessageTemplateActionBuilder('message label 2','test message 2')
