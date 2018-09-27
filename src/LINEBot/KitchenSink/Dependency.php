@@ -25,6 +25,7 @@ class Dependency
 {
     public function register(\Slim\App $app)
     {
+error_log("===== Dependency::register()");
         $container = $app->getContainer();
 
         $container['logger'] = function ($c) {
