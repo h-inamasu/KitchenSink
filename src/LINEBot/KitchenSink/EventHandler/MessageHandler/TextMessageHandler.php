@@ -44,6 +44,10 @@ use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder;
+use LINE\LINEBot\RichMenuBuilder;
+use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
+use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
+use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
 
 class TextMessageHandler implements EventHandler
 {
