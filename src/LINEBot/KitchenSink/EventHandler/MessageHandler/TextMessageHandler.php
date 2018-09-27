@@ -80,6 +80,28 @@ class TextMessageHandler implements EventHandler
         switch ($text) {
             case 'rich':
 error_log("----- rich detected.");
+        $label2=new RichMenuAreaBuilder(
+                    new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                    new MessageTemplateActionBuilder('message label 2','test message 2')
+                );
+error_log("----- 1111111111");
+        $label=new RichMenuAreaBuilder(
+                   new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                   new MessageTemplateActionBuilder('message label','test message')
+               );
+error_log("----- 2222222222");
+        $richMenuBuilder=
+            new RichMenuBuilder(
+                RichMenuSizeBuilder::getFull(),
+                true,
+                'Nice richmenu',
+                'Tap to open',
+                [
+                    $label,
+                    $label2
+                ]
+            );
+error_log("----- 3333333333");
         $res=$this->bot->createRichMenu(
             new RichMenuBuilder(
                 RichMenuSizeBuilder::getFull(),
