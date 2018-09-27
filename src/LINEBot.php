@@ -51,7 +51,6 @@ class LINEBot
      */
     public function __construct(HTTPClient $httpClient, array $args)
     {
-error_log("====== LINEBot::__construct()");
         $this->httpClient = $httpClient;
         $this->channelSecret = $args['channelSecret'];
 
@@ -59,7 +58,6 @@ error_log("====== LINEBot::__construct()");
         if (array_key_exists('endpointBase', $args) && !empty($args['endpointBase'])) {
             $this->endpointBase = $args['endpointBase'];
         }
-error_log("ooooo LINEBot::__construct()");
     }
 
     /**
@@ -388,8 +386,7 @@ error_log("ooooo LINEBot::__construct()");
             urlencode($userId),
             urlencode($richMenuId)
         );
-error_log("----- url: ".$url");
-        return $this->httpClient->post($url, [["Content-Length: 0"]]);
+        return $this->httpClient->post($url, []);
     }
 
     /**
