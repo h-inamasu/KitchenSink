@@ -114,7 +114,7 @@ error_log("     isSucceeded=true");
 error_log("----- Get user id");
         $userId=$this->textMessage->getUserId();
 error_log("----- Upload Richmenu Image");
-	$res=$this->bot->uploadRichMenuImage($userId,'/controller_01.png','img/png');
+	$res=$this->bot->uploadRichMenuImage($userId,'https://onepiece-linebot.herokuapp.com/controller_01.png','img/png');
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP staus=200");
 }
