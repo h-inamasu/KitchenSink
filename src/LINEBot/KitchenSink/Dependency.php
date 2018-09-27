@@ -32,6 +32,7 @@ class Dependency
             $logger = new \Monolog\Logger($settings['name']);
             $logger->pushProcessor(new \Monolog\Processor\UidProcessor());
             $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], \Monolog\Logger::DEBUG));
+error_log("OK2 OK2 OK2");
             return $logger;
         };
 
@@ -40,6 +41,7 @@ class Dependency
             $channelSecret = $settings['bot']['channelSecret'];
             $channelToken = $settings['bot']['channelToken'];
             $apiEndpointBase = $settings['apiEndpointBase'];
+error_log("BONZO BONZO BONZO");
             $bot = new LINEBot(new CurlHTTPClient($channelToken), [
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
