@@ -46,6 +46,44 @@ class FollowEventHandler implements EventHandler
 
     public function handle()
     {
-        $this->bot->replyText($this->followEvent->getReplyToken(), 'Got followed event');
+        $code='10008d';
+        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
+        $moonGrin=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
+        $code='100079';
+        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
+        $hahaha=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
+        $code='100090';
+        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
+        $content=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
+        $message="お友達登録ありがとうございます".$moonGrin."\n" .
+                 "いつでもお気軽にお問い合わせメッセージをお送りください！".$hahaha."\n".
+                 "シューワのお水をご利用中のお客様は\n" .
+                 "■お客様番号（チラシに記載の番号）\n" .
+                 "このメッセージにお送りください！\n" .
+                 "お送り頂いた方にはもれなくお水12ℓ一本プレゼント！\n" .
+                 "みなさまのご返信おまちしております".$content;
+
+        $this->bot->replyText($this->followEvent->getReplyToken(),$message);
+
+error_log("---------- BEGIN");
+        $res=$this->bot->createRichMenu(
+            new RichMenuBuilder(
+                RichMenuSizeBuilder::getFull(),
+                true,
+                'Nice richmenu',
+                'Tap to open',
+                [
+                    new RichMenuAreaBuilder(
+                        new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                        new MessageTemplateActionBuilder('message label','test message')
+                    ),
+                    new RichMenuAreaBuilder(
+                        new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                        new MessageTemplateActionBuilder('message label 2','test message 2')
+                    )
+                ]
+            )
+        );
+error_log("---------- END");
     }
 }
