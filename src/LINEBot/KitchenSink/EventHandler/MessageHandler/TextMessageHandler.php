@@ -83,7 +83,7 @@ class TextMessageHandler implements EventHandler
 
         switch ($text) {
             case 'rich':
-error_log("----- Rich detected");
+error_log("----- Create Richmenu");
         $res=$this->bot->createRichMenu(
             new RichMenuBuilder(
                 RichMenuSizeBuilder::getFull(),
@@ -111,7 +111,19 @@ error_log("true true true");
 if ($res->getJSONDecodeBody()['status']==200) {
 error_log("JSON 200");
 }
-error_log("---------- END");
+error_log("----- Upload Richmenu Image");
+        $userId=$this->textMessage->getUserId();
+	$res=$this->bot->uploadRichMenuImage($userId,'/controller_01.png','img/png');
+if ($res->getHTTPStatus()==200) {
+error_log("200 200 200");
+}
+if ($res->isSucceeded()==true) {
+error_log("true true true");
+}
+if ($res->getJSONDecodeBody()['status']==200) {
+error_log("JSON 200");
+}
+error_log("----- Completed");
                 break;
             case 'profile':
                 $userId = $this->textMessage->getUserId();
