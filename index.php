@@ -26,7 +26,7 @@ error_log("Start of index.php");
 $setting = Setting::getSetting();
 $app = new \Slim\App($setting);
 
-(new Route())->register($app);
+//(new Route())->register($app);
 (new Dependency())->register($app);
 
 $app->run();
