@@ -125,6 +125,19 @@ error_log("     isSucceeded=true");
 if ($res->getJSONDecodedBody()['status']==200) {
 error_log("JSON 200");
 }
+error_log("----- Get User Id");
+        $userId=$this->textMessage->getUserId();
+error_log("----- Link Richmene to User");
+        $res=$this->bot->linkRichMenu($userId,$richMenuId);
+if ($res->getHTTPStatus()==200) {
+error_log("     HTTP staus=200");
+}
+if ($res->isSucceeded()==true) {
+error_log("     isSucceeded=true");
+}
+if ($res->getJSONDecodedBody()['status']==200) {
+error_log("JSON 200");
+}
 error_log("----- Completed");
                 break;
             case 'profile':
