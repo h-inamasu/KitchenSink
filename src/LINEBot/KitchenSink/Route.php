@@ -80,24 +80,33 @@ class Route
                 $handler = null;
 
                 if ($event instanceof MessageEvent) {
+error_log("----- MessageEvent");
                     if ($event instanceof TextMessage) {
+error_log("          TextMessage");
                         $handler = new TextMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof StickerMessage) {
+error_log("          StickerMessage");
                         $handler = new StickerMessageHandler($bot, $logger, $event);
                     } elseif ($event instanceof LocationMessage) {
+error_log("          LocationMessage");
                         $handler = new LocationMessageHandler($bot, $logger, $event);
                     } elseif ($event instanceof ImageMessage) {
+error_log("          ImageMessage");
                         $handler = new ImageMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof AudioMessage) {
+error_log("          AudioMessage");
                         $handler = new AudioMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof VideoMessage) {
+error_log("          VideoMessage");
                         $handler = new VideoMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof UnknownMessage) {
+error_log("          UnknownMessage");
                         $logger->info(sprintf(
                             'Unknown message type has come [message type: %s]',
                             $event->getMessageType()
                         ));
                     } else {
+error_log("          Unexpected message");
                         // Unexpected behavior (just in case)
                         // something wrong if reach here
                         $logger->info(sprintf(
@@ -107,20 +116,28 @@ class Route
                         continue;
                     }
                 } elseif ($event instanceof UnfollowEvent) {
+error_log("----- UnfollowEvent");
                     $handler = new UnfollowEventHandler($bot, $logger, $event);
                 } elseif ($event instanceof FollowEvent) {
+error_log("----- FollowEvent");
                     $handler = new FollowEventHandler($bot, $logger, $event);
                 } elseif ($event instanceof JoinEvent) {
+error_log("----- JoinEvent");
                     $handler = new JoinEventHandler($bot, $logger, $event);
                 } elseif ($event instanceof LeaveEvent) {
+error_log("----- LeaveEvent");
                     $handler = new LeaveEventHandler($bot, $logger, $event);
                 } elseif ($event instanceof PostbackEvent) {
+error_log("----- PostbackEvent");
                     $handler = new PostbackEventHandler($bot, $logger, $event);
                 } elseif ($event instanceof BeaconDetectionEvent) {
+error_log("----- BeaconDetectionEvent");
                     $handler = new BeaconEventHandler($bot, $logger, $event);
                 } elseif ($event instanceof UnknownEvent) {
+error_log("----- UnknownEvent");
                     $logger->info(sprintf('Unknown message type has come [type: %s]', $event->getType()));
                 } else {
+error_log("----- Unexpected event");
                     // Unexpected behavior (just in case)
                     // something wrong if reach here
                     $logger->info(sprintf(
