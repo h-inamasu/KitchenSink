@@ -44,6 +44,7 @@ class Dependency
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
             ]);
+error_log("oxoxoxoxoxoxooxoxoxoxoxoxoxo");
             return $bot;
         };
     }
