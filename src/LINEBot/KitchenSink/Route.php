@@ -61,9 +61,9 @@ error_log("====== callback");
             /** @var \Monolog\Logger $logger */
             $logger = $this->logger;
 
-error_log("===== 00000000000");
+error_log("===== "00000000000");
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
-error_log("===== 11111111111");
+error_log("===== "11111111111");
             if (empty($signature)) {
                 $logger->info('Signature is missing');
                 return $res->withStatus(400, 'Bad Request');
