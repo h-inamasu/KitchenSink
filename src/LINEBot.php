@@ -386,6 +386,7 @@ class LINEBot
             urlencode($userId),
             urlencode($richMenuId)
         );
+error_log("----- url: ".$url");
         return $this->httpClient->post($url, [["Content-Length: 0"]]);
     }
 
