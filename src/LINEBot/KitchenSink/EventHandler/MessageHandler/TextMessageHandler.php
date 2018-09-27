@@ -111,12 +111,11 @@ error_log("     isSucceeded=true");
 if ($res->getJSONDecodedBody()['status']==200) {
 error_log("JSON 200");
 }
-error_log("----- Get user id");
-        $userId=$this->textMessage->getUserId();
+error_log("----- Get Richmenu id");
         $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
 error_log("     richMenuId=".$richMenuId);
 error_log("----- Upload Richmenu Image");
-	$res=$this->bot->uploadRichMenuImage($richMenuId,'https://onepiece-linebot.herokuapp.com/rich_menu.png','img/png');
+	$res=$this->bot->uploadRichMenuImage($richMenuId,'/rich_menu.png','img/png');
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP staus=200");
 }
