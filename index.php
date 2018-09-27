@@ -30,3 +30,4 @@ $app = new \Slim\App($setting);
 (new Dependency())->register($app);
 
 $app->run();
+error_log("End of index.php");
