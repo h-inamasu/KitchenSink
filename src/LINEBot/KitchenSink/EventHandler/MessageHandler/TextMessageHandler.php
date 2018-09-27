@@ -102,29 +102,29 @@ error_log("----- Create Richmenu");
                 ]
             )
         );
-if ($res->getHTTPStatus()==200) {
-error_log("     HTTP status=200");
-}
-if ($res->isSucceeded()==true) {
-error_log("     isSucceeded=true");
-}
-if ($res->getJSONDecodedBody()['status']==200) {
-error_log("JSON 200");
-}
+//if ($res->getHTTPStatus()==200) {
+//error_log("     HTTP status=200");
+//}
+//if ($res->isSucceeded()==true) {
+//error_log("     isSucceeded=true");
+//}
+//if ($res->getJSONDecodedBody()['status']==200) {
+//error_log("JSON 200");
+//}
 error_log("----- Get Richmenu id");
         $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
 error_log("     richMenuId=".$richMenuId);
 error_log("----- Upload Richmenu Image");
 	$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','img/png');
-if ($res->getHTTPStatus()==200) {
-error_log("     HTTP staus=200");
-}
-if ($res->isSucceeded()==true) {
-error_log("     isSucceeded=true");
-}
-if ($res->getJSONDecodedBody()['status']==200) {
-error_log("JSON 200");
-}
+//if ($res->getHTTPStatus()==200) {
+//error_log("     HTTP staus=200");
+//}
+//if ($res->isSucceeded()==true) {
+//error_log("     isSucceeded=true");
+//}
+//if ($res->getJSONDecodedBody()['status']==200) {
+//error_log("JSON 200");
+//}
 error_log("----- Get User Id");
         $userId=$this->textMessage->getUserId();
 error_log("----- Link Richmene to User");
