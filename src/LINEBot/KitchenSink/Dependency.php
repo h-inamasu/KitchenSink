@@ -42,7 +42,7 @@ error_log("OK2 OK2 OK2");
             $channelToken = $settings['bot']['channelToken'];
             $apiEndpointBase = $settings['apiEndpointBase'];
 error_log("===== channelToken: ".$channelToken);
-$temp=new CurlHTTPClient($channelToken)l
+$temp=new CurlHTTPClient($channelToken);
 error_log("BONZO BONZO BONZO");
             $bot = new LINEBot(new CurlHTTPClient($channelToken), [
                 'channelSecret' => $channelSecret,
