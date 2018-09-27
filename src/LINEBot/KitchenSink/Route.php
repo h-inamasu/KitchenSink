@@ -58,7 +58,7 @@ class Route
 error_log("====== callback");
             /** @var LINEBot $bot */
 error_log("===== callback 2");
-//            $bot = $this->bot;
+            $bot = $this->bot;
             /** @var \Monolog\Logger $logger */
 error_log("===== callback 3");
             $logger = $this->logger;
