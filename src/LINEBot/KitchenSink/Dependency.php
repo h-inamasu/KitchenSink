@@ -41,6 +41,8 @@ class Dependency
             $channelToken = $settings['bot']['channelToken'];
             $apiEndpointBase = $settings['apiEndpointBase'];
 error_log("------------");
+new CurlHTTPClient($channelToken);
+error_log("xxxxxxxxxxxx");
             $bot = new LINEBot(new CurlHTTPClient($channelToken), [
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
