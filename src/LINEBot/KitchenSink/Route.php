@@ -106,7 +106,7 @@ error_log("          UnknownMessage");
                             $event->getMessageType()
                         ));
                     } else {
-error_log("          Unexpected message");
+error_log("          Unexpected message!");
                         // Unexpected behavior (just in case)
                         // something wrong if reach here
                         $logger->info(sprintf(
@@ -137,7 +137,7 @@ error_log("----- BeaconDetectionEvent");
 error_log("----- UnknownEvent");
                     $logger->info(sprintf('Unknown message type has come [type: %s]', $event->getType()));
                 } else {
-error_log("----- Unexpected event");
+error_log("----- Unexpected event!");
                     // Unexpected behavior (just in case)
                     // something wrong if reach here
                     $logger->info(sprintf(
