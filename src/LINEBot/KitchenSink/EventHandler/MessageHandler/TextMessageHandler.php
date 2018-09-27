@@ -111,8 +111,9 @@ error_log("true true true");
 if ($res->getJSONDecodeBody()['status']==200) {
 error_log("JSON 200");
 }
-error_log("----- Upload Richmenu Image");
+error_log("----- Get user id");
         $userId=$this->textMessage->getUserId();
+error_log("----- Upload Richmenu Image");
 	$res=$this->bot->uploadRichMenuImage($userId,'/controller_01.png','img/png');
 if ($res->getHTTPStatus()==200) {
 error_log("200 200 200");
