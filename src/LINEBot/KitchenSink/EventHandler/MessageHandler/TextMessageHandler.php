@@ -127,9 +127,10 @@ error_log("----- Upload Richmenu Image");
 //}
 error_log("----- Get User Id");
         $userId=$this->textMessage->getUserId();
+error_log("      User Id=".$userId);
+error_log("      Richmenu Id=".$richMenuId);
 error_log("----- Link Richmene to User");
         $res=$this->bot->linkRichMenu($userId,$richMenuId);
-error_log("      User Id=".$userId);
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP staus=200");
 }
