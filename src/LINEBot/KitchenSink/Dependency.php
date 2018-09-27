@@ -45,6 +45,7 @@ error_log("------------");
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
             ]);
+error_log("xxxxxxxxxxxx");
             return $bot;
         };
     }
