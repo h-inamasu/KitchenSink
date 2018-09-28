@@ -90,6 +90,7 @@ error_log("     HTTP 200");
 } else {
 error_log("     HTTP NG");
 }
+error_log("     Body: ".$res->getRawBody());
                 $list=$res->getJSONDecodedBody();
 //error_log("     rawBody: ".$res->getRawBody());
 //error_log("     jsonBory: ".$res->getJSONDecodedBody());
