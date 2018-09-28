@@ -78,9 +78,9 @@ error_log("----- Create Richmenu");
 //error_log("      getRichMenuList HTTP ".$val);
 if ($res->getHTTPStatus()==200) {
 error_log("      getRichMenuList HTTP 200");
-error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
 } else {
-error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
+$val=strval($res->getHTTPStatus());
+error_log("      getRichMenuList HTTP ".$val);
 }
 return;
 //        $json=$res->getJSONDecodedBody();
