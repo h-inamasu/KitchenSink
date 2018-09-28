@@ -84,6 +84,9 @@ error_log("      count: ".strval(count($richmenus)));
 error_log("      richMenuId: ".$richMenuId);
             $name=$value['name'];
 error_log("      name: ".$name);
+            if (strcmp($name,$richMenuName)==0) {
+error_log("      Found rich menu already created ".$name);
+            }
         }
 return;
         $res=$this->bot->createRichMenu(
