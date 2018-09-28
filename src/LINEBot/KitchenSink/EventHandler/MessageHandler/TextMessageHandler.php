@@ -99,8 +99,9 @@ error_log("     HTTP NG");
 error_log("     count: ".strval(count($richmenus)));
 //error_log("     menu name: ".$list['richMenuId']);
                 foreach ($richmenus as $i =>$value) {
-                    error_log("     richMenuId: ".$value['richMenuId']);
-                    $res=deleteRichMenu($value['richMenuId']);
+                    $richMenuId=$value['richMenuId'];
+                    error_log("     richMenuId: ".$richMenuId);
+                    $res=deleteRichMenu($richMenuId);
 error_log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP 200");
