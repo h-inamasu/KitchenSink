@@ -105,7 +105,11 @@ error_log("----- Create Richmenu");
                 ]
             )
         );
-error_log("     createRichMenu HTTP status: ",.strval($res->getHTTPStatus()));
+if ($res->getHTTPStatus()==200) {
+error_log("     createRichMenu HTTP status 200");
+} else {
+error_log("     createRichMenu HTTP status NG");
+}
 //if ($res->isSucceeded()==true) {
 //error_log("     isSucceeded=true");
 //}
