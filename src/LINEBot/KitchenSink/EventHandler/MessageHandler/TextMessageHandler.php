@@ -86,12 +86,13 @@ class TextMessageHandler implements EventHandler
 error_log("----- rich0");
                 $res=$this->bot->getRichMenuList();
                 $list=$res->getJSONDecodedBody();
-error_log("     rawBody: ".$res->getRawBody());
-error_log("     jsonBory: ".$res->getJSONDecodedBody());
+//error_log("     rawBody: ".$res->getRawBody());
+//error_log("     jsonBory: ".$res->getJSONDecodedBody());
 //error_log("    class name: ".get_class($list));
-//error_log("     count: ".strval(count($list)));
+error_log("     count: ".strval(count($list)));
 //error_log("     menu name: ".$list['richMenuId']);
                 foreach ($list as $i =>$value) {
+                    error_log("     menu name: ".$value['richMenuId']);
                     error_log("XOXOXOXOXOXOXOXOXOXO");
                 }
                 break;
