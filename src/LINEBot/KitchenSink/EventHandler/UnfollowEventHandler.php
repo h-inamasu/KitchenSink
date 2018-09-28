@@ -46,10 +46,27 @@ class UnfollowEventHandler implements EventHandler
 
     public function handle()
     {
-        $this->logger->info(sprintf(
-            'Unfollowed this bot %s %s',
-            $this->unfollowEvent->getType(),
-            $this->unfollowEvent->getUserId()
-        ));
+//        $this->logger->info(sprintf(
+//            'Unfollowed this bot %s %s',
+//            $this->unfollowEvent->getType(),
+//            $this->unfollowEvent->getUserId()
+//        ));
+        $userId=$this->unfollowEvent->getUserId();
+error_log("===== userId: ".$userId);
+        $res=$this->bot->getRichMenuId($userId);
+        if ($res->getHTTPStatus()==200) {
+            error_log("     HTTP staus=200");
+        }
+        $body=$res->getJSONDecodedBody();
+        $richMenuId=$body['richMenuId'];
+error_log("===== richMenuId: ".$richMenuId);
+        $res=$this->bot->unlinkRichMenu($userId);
+        if ($res->getHTTPStatus()==200) {
+            error_log("     HTTP staus=200");
+        }
+        $res=$this->bot->deleteRichMenu($richMenuId); 
+        if ($res->getHTTPStatus()==200) {
+            error_log("     HTTP staus=200");
+        }
     }
 }
