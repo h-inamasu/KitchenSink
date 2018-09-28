@@ -96,6 +96,28 @@ error_log("     count: ".strval(count($list)));
                     error_log("XOXOXOXOXOXOXOXOXOXO");
                 }
                 break;
+            case 'unrich':
+error_log("----- unrich");
+        $userId=$this->unfollowEvent->getUserId();
+error_log("===== userId: ".$userId);
+        $res=$this->bot->getRichMenuId($userId);
+//error_log("     HTTP satus: ".strval($res->getHTTPStatus());
+        if ($res->getHTTPStatus()==200) {
+            error_log("     HTTP OK (getRichMenuId)");
+        }
+        $body=$res->getJSONDecodedBody();
+        $richMenuId=$body['richMenuId'];
+error_log("===== richMenuId: ".$richMenuId);
+        $res=$this->bot->unlinkRichMenu($userId);
+        if ($res->getHTTPStatus()==200) {
+            error_log("     HTTP OK (unlinkRichMenu)");
+        }
+        $res=$this->bot->deleteRichMenu($richMenuId); 
+        if ($res->getHTTPStatus()==200) {
+            error_log("     HTTP OK (deleteRichMenu)");
+        }
+error_log("ooooo Completed");
+                break;
             case 'rich':
 error_log("----- Create Richmenu");
         $res=$this->bot->createRichMenu(
