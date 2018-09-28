@@ -55,18 +55,19 @@ class UnfollowEventHandler implements EventHandler
 error_log("===== userId: ".$userId);
         $res=$this->bot->getRichMenuId($userId);
         if ($res->getHTTPStatus()==200) {
-            error_log("     HTTP staus=200");
+            error_log("     HTTP OK (getRichMenuId)");
         }
         $body=$res->getJSONDecodedBody();
         $richMenuId=$body['richMenuId'];
 error_log("===== richMenuId: ".$richMenuId);
         $res=$this->bot->unlinkRichMenu($userId);
         if ($res->getHTTPStatus()==200) {
-            error_log("     HTTP staus=200");
+            error_log("     HTTP OK (unlinkRichMenu)");
         }
         $res=$this->bot->deleteRichMenu($richMenuId); 
         if ($res->getHTTPStatus()==200) {
-            error_log("     HTTP staus=200");
+            error_log("     HTTP OK (deleteRichMenu)");
         }
+error_log("ooooo Completed");
     }
 }
