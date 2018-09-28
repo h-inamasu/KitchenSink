@@ -99,7 +99,8 @@ error_log("     HTTP NG");
 error_log("     count: ".strval(count($richmenus)));
 //error_log("     menu name: ".$list['richMenuId']);
                 foreach ($richmenus as $i =>$value) {
-                    error_log("     menu name: ".$value['richMenuId']);
+                    error_log("     richMenuId: ".$value['richMenuId']);
+                    deleteRichMenu($value['richMenuId']);
                     error_log("XOXOXOXOXOXOXOXOXOXO");
                 }
                 break;
