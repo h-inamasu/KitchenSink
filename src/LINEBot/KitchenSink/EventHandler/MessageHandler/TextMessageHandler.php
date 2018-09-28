@@ -98,17 +98,21 @@ error_log("     HTTP NG");
 //error_log("    class name: ".get_class($list));
 error_log("     count: ".strval(count($richmenus)));
 //error_log("     menu name: ".$list['richMenuId']);
-                foreach ($richmenus as $i =>$value) {
-                    $richMenuId=$value['richMenuId'];
+                for ($i=0:$i<count($richmenus);$i++) {
+                    $richmenu=richmenus[i];
+                    $richMenudId=$richmenu['richMenuId'];
                     error_log("     richMenuId: ".$richMenuId);
+                }
+//                foreach ($richmenus as $i =>$value) {
+//                    $richMenuId=$value['richMenuId'];
+//                    error_log("     richMenuId: ".$richMenuId);
 //$res=deleteRichMenu($richMenuId);
 //if ($res->getHTTPStatus()==200) {
 //error_log("     HTTP 200");
 //} else {
 //error_log("     HTTP NG");
 //}
-                    error_log("XOXOXOXOXOXOXOXOXOXO");
-                }
+//                }
                 break;
             case 'unrich':
 error_log("----- unrich");
