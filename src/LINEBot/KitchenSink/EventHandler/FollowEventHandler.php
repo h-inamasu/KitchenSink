@@ -75,13 +75,14 @@ error_log("----- Create Richmenu");
         $res=$this-bot->getRichMenuList();
 $httpStatus=$res->getHTTPStatus();
 $val=strval($httpStatus);
-error_log("      getRichMenuList() HTTP ".$val);
-return;
+error_log("      getRichMenuList HTTP ".$val);
 if ($res->getHTTPStatus()==200) {
-//error_log("      getRichMenuList HTTP 200");
-//} else {
-//error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
-//}
+error_log("      getRichMenuList HTTP 200");
+error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
+} else {
+error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
+}
+return;
 //        $json=$res->getJSONDecodedBody();
 //        $richmenus=$json['richmenus'];
 //error_log("      count: ".strval(count($richmenus)));
