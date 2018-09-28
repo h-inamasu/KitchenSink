@@ -18,7 +18,7 @@
 
 namespace LINE\LINEBot\KitchenSink\EventHandler;
 
-use LINE\LINEBot;
+//use LINE\LINEBot;
 use LINE\LINEBot\Event\UnfollowEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
 
