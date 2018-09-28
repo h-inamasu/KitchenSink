@@ -356,6 +356,7 @@ class LINEBot
     public function deleteRichMenu($richMenuId)
     {
         $url = sprintf('%s/v2/bot/richmenu/%s', $this->endpointBase, urlencode($richMenuId));
+error_log("----- url: ".$url);
         return $this->httpClient->delete($url);
     }
 
@@ -368,7 +369,6 @@ class LINEBot
     public function getRichMenuId($userId)
     {
         $url = sprintf('%s/v2/bot/user/%s/richmenu', $this->endpointBase, urlencode($userId));
-error_log("+++++ url: ".$url);
         return $this->httpClient->get($url, []);
     }
 
