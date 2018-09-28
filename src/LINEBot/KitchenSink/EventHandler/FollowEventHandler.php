@@ -74,7 +74,8 @@ error_log("----- Create Richmenu");
         $richMenuName='Rich Menu Name';
         $res=$this-bot->getRichMenuList();
 $httpStatus=$res->getHTTPStatus();
-error_log("      getRichMenuList() HTTP ".strval($httpStatus));
+$val=strval($httpStatus);
+error_log("      getRichMenuList() HTTP ".$val);
 return;
 if ($res->getHTTPStatus()==200) {
 //error_log("      getRichMenuList HTTP 200");
