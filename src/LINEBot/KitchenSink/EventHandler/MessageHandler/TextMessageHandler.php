@@ -153,19 +153,19 @@ error_log("     isSucceeded=true");
 if ($res->getJSONDecodedBody()['status']==200) {
 error_log("JSON 200");
 }
-$res=$this->bot->setDefaultRichMenu($richMenuId);
-if ($res->getHTTPStatus()==200) {
-error_log("     HTTP staus=200");
-} else {
-$val=strval($res->getHTTPStatus());
-error_log("     HTTP status=".$val);
-}
-if ($res->isSucceeded()==true) {
-error_log("     isSucceeded=true");
-}
-if ($res->getJSONDecodedBody()['status']==200) {
-error_log("JSON 200");
-}
+//$res=$this->bot->setDefaultRichMenu($richMenuId);
+//if ($res->getHTTPStatus()==200) {
+//error_log("     HTTP staus=200");
+//} else {
+//$val=strval($res->getHTTPStatus());
+//error_log("     HTTP status=".$val);
+//}
+//if ($res->isSucceeded()==true) {
+//error_log("     isSucceeded=true");
+//}
+//if ($res->getJSONDecodedBody()['status']==200) {
+//error_log("JSON 200");
+//}
 error_log("----- Completed");
                 break;
             case 'profile':
