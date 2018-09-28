@@ -85,6 +85,11 @@ class TextMessageHandler implements EventHandler
             case 'rich0':
 error_log("----- rich0");
                 $res=$this->bot->getRichMenuList();
+if ($res->getHTTPStatus()==200) {
+error_log("     HTTP 200");
+} else {
+error_log("     HTTP NG");
+}
                 $list=$res->getJSONDecodedBody();
 //error_log("     rawBody: ".$res->getRawBody());
 //error_log("     jsonBory: ".$res->getJSONDecodedBody());
