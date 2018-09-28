@@ -71,11 +71,27 @@ class FollowEventHandler implements EventHandler
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
 error_log("----- Create Richmenu");
+        $richMenuName='Rich Menu Name';
+        $res=$this-bot->getRichMenuList();
+if ($res->getHTTPStatus()==200) {
+error_log("      getRichMenuList HTTP 200");
+} else {
+error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
+}
+        $json=$res->getJSONDecodedBody();
+        $richmenus=$json['richmenus'];
+error_log("      count: ".strval(count($richmenus)));
+        foreach ($richmenus as $richmenu=>$value) {
+            $richMenuId=$value['richMeniId'];
+error_log("      richMenuId: ".$richMenuId);
+            $richMenuName=$value['name'];
+error_log("      richMenuName: ".$richMenuName);
+        }
         $res=$this->bot->createRichMenu(
             new RichMenuBuilder(
                 RichMenuSizeBuilder::getFull(),
                 true,
-                'Nice richmenu',
+                $richMenuName,
                 'Tap to open',
                 [
                     new RichMenuAreaBuilder(
