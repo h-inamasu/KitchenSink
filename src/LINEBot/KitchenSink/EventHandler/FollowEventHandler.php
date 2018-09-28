@@ -76,22 +76,16 @@ error_log("----- Create Richmenu");
 $httpStatus=$res->getHTTPStatus();
 $val=strval($httpStatus);
 error_log("      getRichMenuList HTTP ".$val);
-//if ($res->getHTTPStatus()==200) {
-//error_log("      getRichMenuList HTTP 200");
-//} else {
-//$val=strval($res->getHTTPStatus());
-//error_log("      getRichMenuList HTTP ".$val);
-//}
+        $json=$res->getJSONDecodedBody();
+        $richmenus=$json['richmenus'];
+error_log("      count: ".strval(count($richmenus)));
+        foreach ($richmenus as $richmenu=>$value) {
+            $richMenuId=$value['richMeniId'];
+error_log("      richMenuId: ".$richMenuId);
+            $name=$value['name'];
+error_log("      name: ".$name);
+        }
 return;
-//        $json=$res->getJSONDecodedBody();
-//        $richmenus=$json['richmenus'];
-//error_log("      count: ".strval(count($richmenus)));
-//        foreach ($richmenus as $richmenu=>$value) {
-//            $richMenuId=$value['richMeniId'];
-//error_log("      richMenuId: ".$richMenuId);
-//            $richMenuName=$value['name'];
-//error_log("      richMenuName: ".$richMenuName);
-//        }
         $res=$this->bot->createRichMenu(
             new RichMenuBuilder(
                 RichMenuSizeBuilder::getFull(),
