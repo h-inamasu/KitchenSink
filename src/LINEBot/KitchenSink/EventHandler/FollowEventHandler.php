@@ -64,5 +64,67 @@ class FollowEventHandler implements EventHandler
                  "みなさまのご返信おまちしております".$content;
 
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
+
+error_log("----- Create Richmenu");
+        $res=$this->bot->createRichMenu(
+            new RichMenuBuilder(
+                RichMenuSizeBuilder::getFull(),
+                true,
+                'Nice richmenu',
+                'Tap to open',
+                [
+                    new RichMenuAreaBuilder(
+                        new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                        new MessageTemplateActionBuilder('message label','test message')
+                    ),
+                    new RichMenuAreaBuilder(
+                        new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                        new MessageTemplateActionBuilder('message label 2','test message 2')
+                    )
+                ]
+            )
+        );
+//if ($res->getHTTPStatus()==200) {
+//error_log("     HTTP status=200");
+//}
+//if ($res->isSucceeded()==true) {
+//error_log("     isSucceeded=true");
+//}
+//if ($res->getJSONDecodedBody()['status']==200) {
+//error_log("JSON 200");
+//}
+error_log("----- Get Richmenu id");
+        $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
+error_log("     richMenuId=".$richMenuId);
+error_log("----- Upload Richmenu Image");
+	$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
+//if ($res->getHTTPStatus()==200) {
+//error_log("     HTTP staus=200");
+//}
+//if ($res->isSucceeded()==true) {
+//error_log("     isSucceeded=true");
+//}
+//if ($res->getJSONDecodedBody()['status']==200) {
+//error_log("JSON 200");
+//}
+error_log("----- Get User Id");
+        $userId=$this->textMessage->getUserId();
+error_log("      User Id=".$userId);
+error_log("      Richmenu Id=".$richMenuId);
+error_log("----- Link Richmene to User");
+        $res=$this->bot->linkRichMenu($userId,$richMenuId);
+if ($res->getHTTPStatus()==200) {
+error_log("     HTTP staus=200");
+} else {
+$val=strval($res->getHTTPStatus());
+error_log("     HTTP status=".$val);
+}
+if ($res->isSucceeded()==true) {
+error_log("     isSucceeded=true");
+}
+if ($res->getJSONDecodedBody()['status']==200) {
+error_log("JSON 200");
+}
+error_log("----- Completed");
     }
 }
