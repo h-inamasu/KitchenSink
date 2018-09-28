@@ -21,6 +21,10 @@ namespace LINE\LINEBot\KitchenSink\EventHandler;
 use LINE\LINEBot;
 use LINE\LINEBot\Event\FollowEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
+use LINE\LINEBot\RichMenuBuilder;
+use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
+use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
+use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
 
 class FollowEventHandler implements EventHandler
 {
