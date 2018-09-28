@@ -108,7 +108,8 @@ error_log("----- Create Richmenu");
 if ($res->getHTTPStatus()==200) {
 error_log("     createRichMenu HTTP status 200");
 } else {
-error_log("     createRichMenu HTTP status NG");
+$val=strval($res->getHTTPStatus());
+error_log("     createRichMenu HTTP status ".$val);
 }
 //if ($res->isSucceeded()==true) {
 //error_log("     isSucceeded=true");
