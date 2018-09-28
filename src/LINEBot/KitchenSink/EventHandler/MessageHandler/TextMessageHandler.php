@@ -92,10 +92,11 @@ error_log("     HTTP NG");
 }
 error_log("     Body: ".$res->getRawBody());
                 $list=$res->getJSONDecodedBody();
+                $richmenus=$list['richmenus'];
 //error_log("     rawBody: ".$res->getRawBody());
 //error_log("     jsonBory: ".$res->getJSONDecodedBody());
 //error_log("    class name: ".get_class($list));
-error_log("     count: ".strval(count($list)));
+error_log("     count: ".strval(count($richmenus)));
 //error_log("     menu name: ".$list['richMenuId']);
                 foreach ($list as $i =>$value) {
                     error_log("     menu name: ".$value['richMenuId']);
