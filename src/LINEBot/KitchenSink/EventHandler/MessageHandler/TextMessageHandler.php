@@ -115,7 +115,7 @@ error_log("----- Get Richmenu id");
         $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
 error_log("     richMenuId=".$richMenuId);
 error_log("----- Upload Richmenu Image");
-	$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','img/png');
+	$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
 //if ($res->getHTTPStatus()==200) {
 //error_log("     HTTP staus=200");
 //}
