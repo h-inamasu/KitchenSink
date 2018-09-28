@@ -101,6 +101,7 @@ error_log("     count: ".strval(count($richmenus)));
                 foreach ($richmenus as $i =>$value) {
                     error_log("     richMenuId: ".$value['richMenuId']);
                     $res=deleteRichMenu($value['richMenuId']);
+error_log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP 200");
 } else {
