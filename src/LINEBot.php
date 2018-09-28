@@ -386,7 +386,6 @@ class LINEBot
             urlencode($userId),
             urlencode($richMenuId)
         );
-error_log("===== url: ".$url);
         return $this->httpClient->post($url, []);
     }
 
@@ -448,5 +447,15 @@ error_log("===== url: ".$url);
     public function getRichMenuList()
     {
         return $this->httpClient->get($this->endpointBase . '/v2/bot/richmenu/list');
+    }
+
+    public function setDefaultRichMenu($richMenuId)
+    {
+        $url = sprintf(
+            '%s/v2/bot/user/all/richmenu/%s',
+            $this->endpointBase,
+            urlencode($richMenuId)
+        );
+        return $this->httpClient->post($url, []);
     }
 }
