@@ -73,9 +73,9 @@ class FollowEventHandler implements EventHandler
 error_log("----- Create Richmenu");
         $richMenuName='Rich Menu Name';
         $res=$this-bot->getRichMenuList();
-$httpStatus=$res->getHTTPStatus();
-$val=strval($httpStatus);
-error_log("      getRichMenuList HTTP ".$val);
+//$httpStatus=$res->getHTTPStatus();
+//$val=strval($httpStatus);
+//error_log("      getRichMenuList HTTP ".$val);
 if ($res->getHTTPStatus()==200) {
 error_log("      getRichMenuList HTTP 200");
 error_log("      getRichMenuList HTTP ".strval($res->getHTTPStatus());
