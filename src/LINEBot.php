@@ -331,6 +331,7 @@ class LINEBot
     public function getRichMenu($richMenuId)
     {
         $url = sprintf('%s/v2/bot/richmenu/%s', $this->endpointBase, urlencode($richMenuId));
+error_log("+++++ url: ".$url);
         return $this->httpClient->get($url, []);
     }
 
