@@ -54,7 +54,7 @@ class UnfollowEventHandler implements EventHandler
         $userId=$this->unfollowEvent->getUserId();
 error_log("===== userId: ".$userId);
         $res=$this->bot->getRichMenuId($userId);
-error_log("     HTTP satus: ".strval($res->getHTTPStatus());
+//error_log("     HTTP satus: ".strval($res->getHTTPStatus());
         if ($res->getHTTPStatus()==200) {
             error_log("     HTTP OK (getRichMenuId)");
         }
