@@ -86,6 +86,7 @@ class TextMessageHandler implements EventHandler
 error_log("----- rich0");
                 $res=$this->bot->getRichMenuList();
                 $list=$res->getJSONDecodedBody();
+error_log("     count: ".strval(count($list)));
                 foreach ($list as $i =>$value) {
                     error_log("===== richMenuId: ".$i['richMenuId']);
                 }
