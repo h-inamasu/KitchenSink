@@ -98,7 +98,7 @@ error_log("     count: ".strval(count($list)));
                 break;
             case 'unrich':
 error_log("----- unrich");
-        $userId=$this->unfollowEvent->getUserId();
+        $userId=$this->textMessage->getUserId();
 error_log("===== userId: ".$userId);
         $res=$this->bot->getRichMenuId($userId);
 //error_log("     HTTP satus: ".strval($res->getHTTPStatus());
