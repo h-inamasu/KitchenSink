@@ -117,6 +117,13 @@ error_log("----- Get User Id");
 error_log("      User Id=".$userId);
 error_log("      Richmenu Id=".$richMenuId);
 error_log("----- Link Richmene to User");
+        $res=$this->bot->getRichMenuId($userId);
+if ($res->getHTTPStatus()==200) {
+error_log("     HTTP staus=200");
+} else {
+$val=strval($res->getHTTPStatus());
+error_log("     HTTP status=".$val);
+}
         $res=$this->bot->linkRichMenu($userId,$richMenuId);
 if ($res->getHTTPStatus()==200) {
 error_log("     HTTP staus=200");
