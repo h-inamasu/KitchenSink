@@ -80,7 +80,7 @@ error_log("      getRichMenuList HTTP ".$val);
         $richmenus=$json['richmenus'];
 error_log("      count: ".strval(count($richmenus)));
         foreach ($richmenus as $richmenu=>$value) {
-            $richMenuId=$value['richMeniId'];
+            $richMenuId=$value['richMenuId'];
 error_log("      richMenuId: ".$richMenuId);
             $name=$value['name'];
 error_log("      name: ".$name);
