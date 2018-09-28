@@ -89,9 +89,9 @@ error_log("----- rich0");
 error_log("    class name: ".get_class($list));
 //error_log("     count: ".strval(count($list)));
 //error_log("     menu name: ".$list['richMenuId']);
-//                foreach ($list as $i =>$value) {
-//                    error_log("===== richMenuId: ".$i['richMenuId']);
-//                }
+                foreach ($list as $i =>$value) {
+                    error_log("XOXOXOXOXOXOXOXOXOXO");
+                }
                 break;
             case 'rich':
 error_log("----- Create Richmenu");
