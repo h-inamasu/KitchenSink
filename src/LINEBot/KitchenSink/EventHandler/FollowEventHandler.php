@@ -112,7 +112,7 @@ error_log("----- Upload Richmenu Image");
 //error_log("JSON 200");
 //}
 error_log("----- Get User Id");
-        $userId=$this->textMessage->getUserId();
+        $userId=$this->followEvent->getUserId();
 error_log("      User Id=".$userId);
 error_log("      Richmenu Id=".$richMenuId);
 error_log("----- Link Richmene to User");
