@@ -82,6 +82,14 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
+            case 'rich0':
+error_log("----- rich0");
+                $res=$this->bot->getRichMenuList();
+                $list=$res->getJSONDecodedBody();
+                foreach ($list as $i =>$value) {
+                    error_log("===== richMenuId: ".$i['richMenuId']);
+                }
+                break;
             case 'rich':
 error_log("----- Create Richmenu");
         $res=$this->bot->createRichMenu(
