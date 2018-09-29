@@ -52,6 +52,7 @@ class UnfollowEventHandler implements EventHandler
 //            $this->unfollowEvent->getUserId()
 //        ));
         error_log("----- Richmenu Started");
+        $richMenuId='';
 
         error_log("----- Get Richmenu Id");
         $userId=$this->unfollowEvent->getUserId();
@@ -59,17 +60,21 @@ class UnfollowEventHandler implements EventHandler
         $res=$this->bot->getRichMenuId($userId);
         error_log("      getRichMenuId HTTP ".strval($res->getHTTPStatus()));
 
-        $body=$res->getJSONDecodedBody();
-        $richMenuId=$body['richMenuId'];
+        if ($res->getHTTPStatus()==200) {
+            $body=$res->getJSONDecodedBody();
+            $richMenuId=$body['richMenuId'];
+        }
         error_log("      richMenuId: ".$richMenuId);
 
         error_log("----- Unlink Richmenu");
         $res=$this->bot->unlinkRichMenu($userId);
         error_log("      unlinkRichMenu HTTP ".strval($res->getHTTPStatus()));
 
-        error_log("----- Delete Richmenu");
-        $res=$this->bot->deleteRichMenu($richMenuId); 
-        error_log("      deleteRichMenu HTTP ".strval($res->getHTTPStatus()));
+        if (empty($richMenuId)==FALSE) {
+            error_log("----- Delete Richmenu");
+            $res=$this->bot->deleteRichMenu($richMenuId); 
+            error_log("      deleteRichMenu HTTP ".strval($res->getHTTPStatus()));
+        }
 
         error_log("----- Richmenu Completed");
     }
