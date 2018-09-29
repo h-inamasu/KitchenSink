@@ -21,7 +21,7 @@ try {
 error_log("pgsql:host=$host;dbname=$dbname");
     $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
 error_log("-----------");
-    $sql="SELECT * FROM USERS LIMIT 10;";
+    $sql="SELECT * FROM public.members LIMIT 10;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll();
     print_r(users);
