@@ -17,6 +17,7 @@ $dbname=substr($url['path'],1);
 $user=$url['user'];
 $password=$url['pass'];
 
+try {
 error_log("pgsql:host=$host;dbname=$dbname");
     $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
 error_log("-----------");
@@ -24,4 +25,7 @@ error_log("-----------");
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll(PDO::FETCH_OBJ);
     print_r(users);
+} catch PDOException $e) {
+    echo $e->getMessage();
+}
 ?>
