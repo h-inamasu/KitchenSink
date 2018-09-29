@@ -26,7 +26,7 @@ error_log("pgsql:host=$host;dbname=$dbname");
     $sql="select * from pg_user;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll();
-    print_r(users);
+    print_r($users);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
