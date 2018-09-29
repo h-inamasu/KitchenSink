@@ -94,40 +94,40 @@ class FollowEventHandler implements EventHandler
             }
         }
 
-if ($richMenuFound==FALSE) {
-        error_log("----- Create Richmenu");
-        $res=$this->bot->createRichMenu(
-            new RichMenuBuilder(
-                RichMenuSizeBuilder::getFull(),
-                true,
-                $richMenuName,
-                'Tap to open',
-                [
-                    new RichMenuAreaBuilder(
-                        new RichMenuAreaBoundsBuilder(0,10,125,1676),
-                        new MessageTemplateActionBuilder('message label','test message')
-                    ),
-                    new RichMenuAreaBuilder(
-                        new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
-                        new MessageTemplateActionBuilder('message label 2','test message 2')
-                    )
-                ]
-            )
-        );
-        $httpStatus=$res->getHTTPStatus();
-        $val=strval($httpStatus);
-        error_log("      createRichMenu HTTP ".$val);
+        if ($richMenuFound==FALSE) {
+            error_log("----- Create Richmenu");
+            $res=$this->bot->createRichMenu(
+                new RichMenuBuilder(
+                    RichMenuSizeBuilder::getFull(),
+                    true,
+                    $richMenuName,
+                    'Tap to open',
+                    [
+                        new RichMenuAreaBuilder(
+                            new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                            new MessageTemplateActionBuilder('message label','test message')
+                        ),
+                        new RichMenuAreaBuilder(
+                            new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                            new MessageTemplateActionBuilder('message label 2','test message 2')
+                        )
+                    ]
+                )
+            );
+            $httpStatus=$res->getHTTPStatus();
+            $val=strval($httpStatus);
+            error_log("      createRichMenu HTTP ".$val);
 
-        error_log("----- Get Richmenu id");
-        $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
-        error_log("     richMenuId=".$richMenuId);
+            error_log("----- Get Richmenu id");
+            $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
+            error_log("     richMenuId=".$richMenuId);
 
-        error_log("----- Upload Richmenu Image");
-        $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
-        $httpStatus=$res->getHTTPStatus();
-        $val=strval($httpStatus);
-        error_log("      uploadRichMenuImage HTTP ".$val);
-}
+            error_log("----- Upload Richmenu Image");
+            $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
+            $httpStatus=$res->getHTTPStatus();
+            $val=strval($httpStatus);
+            error_log("      uploadRichMenuImage HTTP ".$val);
+        }
 
         error_log("----- Link Richmene to User");
         $userId=$this->followEvent->getUserId();
