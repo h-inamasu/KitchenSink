@@ -103,13 +103,33 @@ class FollowEventHandler implements EventHandler
                     $richMenuName,
                     'Tap to open',
                     [
+                        //new RichMenuAreaBuilder(
+                        //    new RichMenuAreaBoundsBuilder(0,10,125,1676),
+                        //    new MessageTemplateActionBuilder('message label','test message')
+                        //),
+                        //new RichMenuAreaBuilder(
+                        //    new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                        //    new MessageTemplateActionBuilder('message label 2','test message 2')
+                        //)
                         new RichMenuAreaBuilder(
-                            new RichMenuAreaBoundsBuilder(0,10,125,1676),
-                            new MessageTemplateActionBuilder('message label','test message')
+                            new RichMenuAreaBoundsBuilder(551,325,321,321),
+                            new MessageTemplateActionBuilder('message label 1','test message 1')
                         ),
                         new RichMenuAreaBuilder(
-                            new RichMenuAreaBoundsBuilder(1250,0,1240,1686),
+                            new RichMenuAreaBoundsBuilder(876,651,321,321),
                             new MessageTemplateActionBuilder('message label 2','test message 2')
+                        ),
+                        new RichMenuAreaBuilder(
+                            new RichMenuAreaBoundsBuilder(551,972,321,321),
+                            new MessageTemplateActionBuilder('message label 3','test message 3')
+                        ),
+                        new RichMenuAreaBuilder(
+                            new RichMenuAreaBoundsBuilder(225,651,321,321),
+                            new MessageTemplateActionBuilder('message label 4','test message 4')
+                        ),
+                        new RichMenuAreaBuilder(
+                            new RichMenuAreaBoundsBuilder(1907,657,367,367),
+                            new MessageTemplateActionBuilder('message label 6','test message 6')
                         )
                     ]
                 )
