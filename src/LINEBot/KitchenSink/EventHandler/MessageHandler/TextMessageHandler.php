@@ -82,32 +82,10 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
-            case 'rich0':
-error_log("----- rich0");
-                $res=$this->bot->getRichMenuList();
-if ($res->getHTTPStatus()==200) {
-error_log("     HTTP 200");
-} else {
-error_log("     HTTP NG");
-}
-//error_log("     Body: ".$res->getRawBody());
-                $list=$res->getJSONDecodedBody();
-                $richmenus=$list['richmenus'];
-//error_log("     rawBody: ".$res->getRawBody());
-//error_log("     jsonBory: ".$res->getJSONDecodedBody());
-//error_log("    class name: ".get_class($list));
-error_log("     count: ".strval(count($richmenus)));
-//error_log("     menu name: ".$list['richMenuId']);
-                foreach ($richmenus as $i =>$value) {
-                    $richMenuId=$value['richMenuId'];
-                    error_log("     richMenuId: ".$richMenuId);
-//$res=deleteRichMenu($richMenuId);
-//if ($res->getHTTPStatus()==200) {
-//error_log("     HTTP 200");
-//} else {
-//error_log("     HTTP NG");
-//}
-                }
+            case 'liff':
+error_log("----- liff");
+            $messageTemplate = new TextMessageBuilder('line://app/1611148065-12Ao52Qx');
+            $this->bot->pushMessage($replyToken,$messageTemplate);
                 break;
             case 'unrich':
 error_log("----- unrich");
