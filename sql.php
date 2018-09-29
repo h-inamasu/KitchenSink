@@ -2,9 +2,8 @@
 
 $url=parse_url(getenv('DATABASE_URL'));
 
-print "host name:";
-print $url['host'];
-print "\n";
+$text='host name: ".$url['host']."\n";
+print $text;
 print "aaa";
 //print(substr($url['path'],1));
 //print($url['user']);
