@@ -18,6 +18,7 @@ $user=$url['user'];
 $password=$url['pass'];
 
     $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
+error_log("-----------");
     $sql="SELECT * FROM USERS LIMIT 10;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll(PDO::FETCH_OBJ);
