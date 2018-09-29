@@ -23,7 +23,7 @@ error_log("pgsql:host=$host;dbname=$dbname");
     if ($pdo==null) {
         error_log("Failed to connect to SQL");
     }
-    $sql="SELECT * FROM public.members LIMIT 10;";
+    $sql="select * from pg_user;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll();
     print_r(users);
