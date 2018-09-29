@@ -70,25 +70,32 @@ class FollowEventHandler implements EventHandler
 
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
-error_log("----- Create Richmenu");
+        error_log("----- Create Richmenu");
         $richMenuName='Rich Menu Name';
+        $richMenuFound=FALSE;
+        $richMenuId='';
         $res=$this->bot->getRichMenuList();
-$httpStatus=$res->getHTTPStatus();
-$val=strval($httpStatus);
-error_log("      getRichMenuList HTTP ".$val);
+        $httpStatus=$res->getHTTPStatus();
+        $val=strval($httpStatus);
+        error_log("      getRichMenuList HTTP ".$val);
+
         $json=$res->getJSONDecodedBody();
         $richmenus=$json['richmenus'];
-error_log("      count: ".strval(count($richmenus)));
+        error_log("      count: ".strval(count($richmenus)));
         foreach ($richmenus as $richmenu=>$value) {
-            $richMenuId=$value['richMenuId'];
-error_log("      richMenuId: ".$richMenuId);
+            $id=$value['richMenuId'];
+            error_log("      richMenuId: ".$id);
             $name=$value['name'];
-error_log("      name: ".$name);
+            error_log("      name: ".$name);
             if (strcmp($name,$richMenuName)==0) {
-error_log("      Found rich menu already created ".$name);
+                error_log("      Found rich menu already created (".$name.")");
+                $richMenuFound=TRUE;
+                $richMenuId=$id;
             }
         }
+
 return;
+if ($richMenuFound==FALSE) {
         $res=$this->bot->createRichMenu(
             new RichMenuBuilder(
                 RichMenuSizeBuilder::getFull(),
@@ -107,57 +114,34 @@ return;
                 ]
             )
         );
-if ($res->getHTTPStatus()==200) {
-error_log("     createRichMenu HTTP status 200");
-} else {
-$val=strval($res->getHTTPStatus());
-error_log("     createRichMenu HTTP status ".$val);
-}
-//if ($res->isSucceeded()==true) {
-//error_log("     isSucceeded=true");
-//}
-//if ($res->getJSONDecodedBody()['status']==200) {
-//error_log("JSON 200");
-//}
-error_log("----- Get Richmenu id");
+        $httpStatus=$res->getHTTPStatus();
+        $val=strval($httpStatus);
+        error_log("      createRichMenu HTTP ".$val);
+
+        error_log("----- Get Richmenu id");
         $richMenuId=$res->getJSONDecodedBody()['richMenuId'];
-error_log("     richMenuId=".$richMenuId);
-error_log("----- Upload Richmenu Image");
-	$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
-//if ($res->getHTTPStatus()==200) {
-//error_log("     HTTP staus=200");
-//}
-//if ($res->isSucceeded()==true) {
-//error_log("     isSucceeded=true");
-//}
-//if ($res->getJSONDecodedBody()['status']==200) {
-//error_log("JSON 200");
-//}
-error_log("----- Get User Id");
+        error_log("     richMenuId=".$richMenuId);
+
+        error_log("----- Upload Richmenu Image");
+        $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
+        $httpStatus=$res->getHTTPStatus();
+        $val=strval($httpStatus);
+        error_log("      uploadRichMenuImage HTTP ".$val);
+}
+
+        error_log("----- Link Richmene to User");
         $userId=$this->followEvent->getUserId();
-error_log("      User Id=".$userId);
-error_log("      Richmenu Id=".$richMenuId);
-error_log("----- Link Richmene to User");
+        error_log("      User Id=".$userId);
+        error_log("      Richmenu Id=".$richMenuId);
         $res=$this->bot->getRichMenuId($userId);
-if ($res->getHTTPStatus()==200) {
-error_log("     HTTP staus=200");
-} else {
-$val=strval($res->getHTTPStatus());
-error_log("     HTTP status=".$val);
-}
+        $httpStatus=$res->getHTTPStatus();
+        $val=strval($httpStatus);
+        error_log("      getRichMenuId HTTP ".$val);
         $res=$this->bot->linkRichMenu($userId,$richMenuId);
-if ($res->getHTTPStatus()==200) {
-error_log("     HTTP staus=200");
-} else {
-$val=strval($res->getHTTPStatus());
-error_log("     HTTP status=".$val);
-}
-if ($res->isSucceeded()==true) {
-error_log("     isSucceeded=true");
-}
-if ($res->getJSONDecodedBody()['status']==200) {
-error_log("JSON 200");
-}
-error_log("----- Completed");
+        $httpStatus=$res->getHTTPStatus();
+        $val=strval($httpStatus);
+        error_log("      linkRichMenu HTTP ".$val);
+
+        error_log("----- Completed");
     }
 }
