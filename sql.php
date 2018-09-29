@@ -25,7 +25,7 @@ error_log("-----------");
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll(PDO::FETCH_OBJ);
     print_r(users);
-} catch PDOException $e) {
+} catch (PDOException $e) {
     echo $e->getMessage();
 }
 ?>
