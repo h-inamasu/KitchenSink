@@ -23,7 +23,7 @@ error_log("pgsql:host=$host;dbname=$dbname");
 error_log("-----------");
     $sql="SELECT * FROM USERS LIMIT 10;";
     $stmt=$pdo->query($sql);
-    $users=$stmt->fetchAll(PDO::FETCH_OBJ);
+    $users=$stmt->fetchAll();
     print_r(users);
 } catch (PDOException $e) {
     echo $e->getMessage();
