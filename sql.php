@@ -23,8 +23,7 @@ error_log("pgsql:host=$host;dbname=$dbname");
     if ($pdo==null) {
         error_log("Failed to connect to SQL");
     }
-    $sql="select * from pg_user where username=$user;";
-error_log($sql);
+    $sql="select * from pg_user;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll();
     print_r($users);
