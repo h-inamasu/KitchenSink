@@ -20,7 +20,9 @@ $password=$url['pass'];
 try {
 error_log("pgsql:host=$host;dbname=$dbname");
     $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
-error_log("-----------");
+    if ($pdo==null) {
+        error_log("Failed to connect to SQL");
+    }
     $sql="SELECT * FROM public.members LIMIT 10;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll();
