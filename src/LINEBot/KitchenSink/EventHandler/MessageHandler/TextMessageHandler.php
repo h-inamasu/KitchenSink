@@ -85,7 +85,7 @@ class TextMessageHandler implements EventHandler
             case 'liff':
 error_log("----- liff");
             $messageTemplate = new TextMessageBuilder('line://app/1611148065-12Ao52Qx');
-            $this->bot->pushMessage($replyToken,$messageTemplate);
+            $this->bot->pushMessage($this->textMessage->getUserId(),$messageTemplate);
                 break;
             case 'unrich':
 error_log("----- unrich");
