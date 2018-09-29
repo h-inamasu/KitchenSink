@@ -128,6 +128,9 @@ class FollowEventHandler implements EventHandler
                             new MessageTemplateActionBuilder('message label 4','test message 4')
                         ),
                         new RichMenuAreaBuilder(
+                            new RichMenuAreaBoundsBuilder(1433,657,367,367),
+                            new MessageTemplateActionBuilder('message label 5','test message 5')
+                        new RichMenuAreaBuilder(
                             new RichMenuAreaBoundsBuilder(1907,657,367,367),
                             new MessageTemplateActionBuilder('message label 6','test message 6')
                         )
