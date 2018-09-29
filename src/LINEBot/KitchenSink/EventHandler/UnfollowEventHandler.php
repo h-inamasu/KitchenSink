@@ -18,40 +18,9 @@
 
 namespace LINE\LINEBot\KitchenSink\EventHandler;
 
-//use LINE\LINEBot;
-use LINE\LINEBot\Event\UnfollowEvent;
-//use LINE\LINEBot\KitchenSink\EventHandler;
-
 use LINE\LINEBot;
-use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
-use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
-use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
-use LINE\LINEBot\TemplateActionBuilder\CameraRollTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\CameraTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\DatetimePickerTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\LocationTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
-use LINE\LINEBot\Event\MessageEvent\TextMessage;
+use LINE\LINEBot\Event\UnfollowEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
-use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexSampleRestaurant;
-use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexSampleShopping;
-use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Util\UrlBuilder;
-use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
-use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder;
-use LINE\LINEBot\RichMenuBuilder;
-use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
-use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
-use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
 
 class UnfollowEventHandler implements EventHandler
 {
@@ -82,24 +51,26 @@ class UnfollowEventHandler implements EventHandler
 //            $this->unfollowEvent->getType(),
 //            $this->unfollowEvent->getUserId()
 //        ));
+        error_log("----- Richmenu Started");
+
+        error_log("----- Get Richmenu Id");
         $userId=$this->unfollowEvent->getUserId();
-error_log("===== userId: ".$userId);
+        error_log("===== userId: ".$userId);
         $res=$this->bot->getRichMenuId($userId);
-//error_log("     HTTP satus: ".strval($res->getHTTPStatus());
-        if ($res->getHTTPStatus()==200) {
-            error_log("     HTTP OK (getRichMenuId)");
-        }
+        error_log("      getRichMenuId HTTP ".strval($res->getHTTPStatus()));
+
         $body=$res->getJSONDecodedBody();
         $richMenuId=$body['richMenuId'];
-error_log("===== richMenuId: ".$richMenuId);
+        error_log("      richMenuId: ".$richMenuId);
+
+        error_log("----- Unlink Richmenu");
         $res=$this->bot->unlinkRichMenu($userId);
-        if ($res->getHTTPStatus()==200) {
-            error_log("     HTTP OK (unlinkRichMenu)");
-        }
+        error_log("      unlinkRichMenu HTTP ".strval($res->getHTTPStatus()));
+
+        error_log("----- Delete Richmenu");
         $res=$this->bot->deleteRichMenu($richMenuId); 
-        if ($res->getHTTPStatus()==200) {
-            error_log("     HTTP OK (deleteRichMenu)");
-        }
-error_log("ooooo Completed");
+        error_log("      deleteRichMenu HTTP ".strval($res->getHTTPStatus()));
+
+        error_log("----- Richmenu Completed");
     }
 }
