@@ -70,7 +70,7 @@ class FollowEventHandler implements EventHandler
 
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
-        error_log("----- Create Richmenu");
+        error_log("----- Richmenu");
         $richMenuName='Rich Menu Name';
         $richMenuFound=FALSE;
         $richMenuId='';
@@ -94,8 +94,8 @@ class FollowEventHandler implements EventHandler
             }
         }
 
-return;
 if ($richMenuFound==FALSE) {
+        error_log("----- Create Richmenu");
         $res=$this->bot->createRichMenu(
             new RichMenuBuilder(
                 RichMenuSizeBuilder::getFull(),
