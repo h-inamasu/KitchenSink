@@ -86,10 +86,9 @@ class TextMessageHandler implements EventHandler
             case 'sql':
 error_log("----- SQL");
                 $stmt=$this->bot->pdo->query("select * from pg_user;");
-error_log("0000000000");
                 $users=$stmt->fetchAll();
-error_log("1111111111");
-                error_log("====> users: ".strval(count($users)));
+                $text="SELECT * FROM PG_USERS;\n"."=>".strval(count($users));
+                $this->bot->replyText($replyToken,$text);
 error_log("+++++ SQL");
                 break;
             case 'liff':
