@@ -35,8 +35,7 @@ class Dependency
             return $logger;
         };
 
-        //$container['bot'] = function ($c) {
-        $container['bot'] = function ($c) use ($container) {
+        $container['bot'] = function ($c) {
             $settings = $c->get('settings');
             $channelSecret = $settings['bot']['channelSecret'];
             $channelToken = $settings['bot']['channelToken'];
@@ -45,7 +44,6 @@ class Dependency
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
             ]);
-$pdo=$container->get('pdo');
 error_log("+++++ BOT");
             return $bot;
         };
