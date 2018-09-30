@@ -85,6 +85,11 @@ class TextMessageHandler implements EventHandler
         switch ($text) {
             case 'sql':
 error_log("----- SQL");
+                if (method_exists($this->bot->pdo,'query')==TRUE) {
+                    error_log("Method Exists");
+                } else {
+                    error_log("Method Not Exists");
+                }
                 //$stmt=$this->bot->getUsers();
                 $stmt=$this->bot->pdo->query("select * from pg_user;");
 error_log("0000000000");
