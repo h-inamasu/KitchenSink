@@ -18,7 +18,6 @@ $user=$url['user'];
 $password=$url['pass'];
 
 try {
-error_log("pgsql:host=$host;dbname=$dbname");
     $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
     if ($pdo==null) {
         error_log("Failed to connect to SQL");
