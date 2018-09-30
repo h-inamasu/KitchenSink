@@ -44,14 +44,24 @@ class Dependency
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
             ]);
-$pdo=$c->get('pdo');
+            $pdo=$c->get('pdo');
 error_log("+++++ BOT");
             return $bot;
         };
 
         $container['pdo']=function($c) {
 error_log("----- PDO");
-            $pdo='pdo';
+            $url=parse_url(getenv('DATABASE_URL'));
+            $host=$url['host'];
+            $dbname=substr($url['path'],1);
+            $user=$url['user'];
+            $password=$url['pass'];
+            $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
+if ($pdo==null) {
+error_log("Failed to connect to data base");
+} else {
+error_log("Succeeded to connect to data base");
+}
 error_log("+++++ PDO");
             return $pdo;
         };
