@@ -465,11 +465,4 @@ error_log("----- url: ".$url);
         );
         return $this->httpClient->post($url, []);
     }
-
-    public function getUsers()
-    {
-        $stmt=$this->pdo->query("select * from pg_user;");
-        return $stmt;
-        //$users=$stmt->fetchAll();
-    }
 }
