@@ -63,11 +63,6 @@ class LINEBot
         }
         if (array_key_exists('pdo',$args)==TRUE) {
             $this->pdo=$args['pdo'];
-            $sql="select * from pg_user;";
-            $stmt=$this->pdo->query("select * from pg_user;");
-            $users=$stmt->fetchAll();
-error_log("+++++ users: ".strval(count($users)));
-error_log("+++++++++++++++++++");
         }
     }
 
@@ -469,5 +464,12 @@ error_log("----- url: ".$url);
             urlencode($richMenuId)
         );
         return $this->httpClient->post($url, []);
+    }
+
+    public function getUsers()
+    {
+        $stmt=$this->pdo->query("select * from pg_user;");
+        $users=$stmt->fetchAll();
+        error_log("****** users: " . strval(count($users)));
     }
 }
