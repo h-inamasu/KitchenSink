@@ -45,6 +45,7 @@ class Dependency
             $bot = new LINEBot(new CurlHTTPClient($channelToken), [
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
+                'pdo' => $pdo
             ]);
             return $bot;
         };
