@@ -18,6 +18,7 @@
 
 namespace LINE\LINEBot\KitchenSink\EventHandler\MessageHandler;
 
+use PDO;
 use LINE\LINEBot;
 use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
