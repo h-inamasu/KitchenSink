@@ -82,7 +82,7 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
-            case 'sql'
+            case 'sql':
 error_log("----- sql");
                 $stmt=$this->pdo->query("select * from pg_user;");
                 $users=$stmt->fetchAll();
