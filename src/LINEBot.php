@@ -66,6 +66,7 @@ class LINEBot
             $sql="select * from pg_user;";
             $stmt=$this->pdo->query("select * from pg_user;");
             $users=$stmt->fetchAll();
+error_log("+++++ users: ".strval(count($users)));
 error_log("+++++++++++++++++++");
         }
     }
