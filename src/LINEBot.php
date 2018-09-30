@@ -42,6 +42,7 @@ class LINEBot
     private $endpointBase;
     /** @var HTTPClient */
     private $httpClient;
+    private $pdo;
 
     /**
      * LINEBot constructor.
@@ -57,6 +58,10 @@ class LINEBot
         $this->endpointBase = LINEBot::DEFAULT_ENDPOINT_BASE;
         if (array_key_exists('endpointBase', $args) && !empty($args['endpointBase'])) {
             $this->endpointBase = $args['endpointBase'];
+        }
+        if (array_key_exists('pdo',$args)==TRUE) {
+error_log("----- PDO found in array");
+            $this->pdo=$args['pdo'];
         }
     }
 
