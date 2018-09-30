@@ -65,6 +65,6 @@ if ($dbConnection==null) {
 error_log("Failed to create connection to data base");
 }
             return $dbConnection;
-        }
+        };
     }
 }
