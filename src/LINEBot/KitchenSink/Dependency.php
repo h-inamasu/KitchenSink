@@ -58,13 +58,13 @@ class Dependency
             //$dbpass="password";
             //$dbname="test_db";
             //$dbConnection=new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-            $dbConnection=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
-            $dbConnection->setAttributre(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
+            $pdo->setAttributre(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 error_log("PDO PDO PDO PDO PDO");
-if ($dbConnection==null) {
+if ($pdo==null) {
 error_log("Failed to create connection to data base");
 }
-            return $dbConnection;
+            return $pdo;
         };
     }
 }
