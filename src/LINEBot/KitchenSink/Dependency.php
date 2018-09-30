@@ -44,7 +44,8 @@ class Dependency
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
             ]);
-$pdo=$this->pdo;
+$pdo=$container->get('pdo');
+error_log("+++++ BOT");
             return $bot;
         };
 
