@@ -57,6 +57,7 @@ error_log("----- PDO");
             $user=$url['user'];
             $password=$url['pass'];
             $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
+error_log("----------");
 if ($pdo==null) {
 error_log("Failed to connect to data base");
 } else {
