@@ -44,7 +44,7 @@ class LINEBot
     /** @var HTTPClient */
     private $httpClient;
     /** @var PDO */
-    private $pdo;
+    public $pdo;
 
     /**
      * LINEBot constructor.
@@ -469,7 +469,6 @@ error_log("----- url: ".$url);
     public function getUsers()
     {
         $stmt=$this->pdo->query("select * from pg_user;");
-        error_log("****** users: " . strval(count($users)));
         return $stmt;
         //$users=$stmt->fetchAll();
     }
