@@ -80,33 +80,32 @@ class Route
                 $handler = null;
 
                 if ($event instanceof MessageEvent) {
-error_log("----- MessageEvent");
                     if ($event instanceof TextMessage) {
-error_log("          TextMessage");
+error_log("----- MessageEvent/TextMessage");
                         $handler = new TextMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof StickerMessage) {
-error_log("          StickerMessage");
+error_log("----- MessageEvent/StickerMessage");
                         $handler = new StickerMessageHandler($bot, $logger, $event);
                     } elseif ($event instanceof LocationMessage) {
-error_log("          LocationMessage");
+error_log("----- MessageEvent/LocationMessage");
                         $handler = new LocationMessageHandler($bot, $logger, $event);
                     } elseif ($event instanceof ImageMessage) {
-error_log("          ImageMessage");
+error_log("----- MessageEvent/ImageMessage");
                         $handler = new ImageMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof AudioMessage) {
-error_log("          AudioMessage");
+error_log("----- MessageEvent/AudioMessage");
                         $handler = new AudioMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof VideoMessage) {
-error_log("          VideoMessage");
+error_log("----- MessageEvent/VideoMessage");
                         $handler = new VideoMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof UnknownMessage) {
-error_log("          UnknownMessage");
+error_log("----- MessageEvent/UnknownMessage");
                         $logger->info(sprintf(
                             'Unknown message type has come [message type: %s]',
                             $event->getMessageType()
                         ));
                     } else {
-error_log("          Unexpected message!");
+error_log("----- MessageEvent/Unexpected Message!");
                         // Unexpected behavior (just in case)
                         // something wrong if reach here
                         $logger->info(sprintf(
@@ -137,7 +136,7 @@ error_log("----- BeaconDetectionEvent");
 error_log("----- UnknownEvent");
                     $logger->info(sprintf('Unknown message type has come [type: %s]', $event->getType()));
                 } else {
-error_log("----- Unexpected event!");
+error_log("----- Unexpected Event!");
                     // Unexpected behavior (just in case)
                     // something wrong if reach here
                     $logger->info(sprintf(
