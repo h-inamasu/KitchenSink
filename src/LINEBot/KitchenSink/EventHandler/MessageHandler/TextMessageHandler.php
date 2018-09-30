@@ -18,6 +18,7 @@
 
 namespace LINE\LINEBot\KitchenSink\EventHandler\MessageHandler;
 
+use PDO;
 use LINE\LINEBot;
 use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
@@ -84,9 +85,6 @@ class TextMessageHandler implements EventHandler
         switch ($text) {
             case 'sql':
 error_log("----- SQL");
-                if ($this->bot->pdo==null) {
-error_log("null null null null null");
-                }
                 $stmt=$this->bot->pdo->query("select * from pg_user;");
 error_log("0000000000");
                 $users=$stmt->fetchAll();
