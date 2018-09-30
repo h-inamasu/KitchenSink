@@ -64,7 +64,7 @@ class LINEBot
         if (array_key_exists('pdo',$args)==TRUE) {
             $this->pdo=$args['pdo'];
             $sql="select * from pg_user;";
-            $stmt=$pdo->query("select * from pg_user;");
+            $stmt=$this->pdo->query("select * from pg_user;");
             $users=$stmt->fetchAll();
 error_log("+++++++++++++++++++");
         }
