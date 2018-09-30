@@ -469,7 +469,8 @@ error_log("----- url: ".$url);
     public function getUsers()
     {
         $stmt=$this->pdo->query("select * from pg_user;");
-        $users=$stmt->fetchAll();
         error_log("****** users: " . strval(count($users)));
+        return $stmt;
+        //$users=$stmt->fetchAll();
     }
 }
