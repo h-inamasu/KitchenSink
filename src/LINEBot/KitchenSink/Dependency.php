@@ -46,25 +46,5 @@ class Dependency
             ]);
             return $bot;
         };
-
-        $container['pdo']=function($c) {
-            $url=parse_url(getenv('DATABASE_URL'));
-            $dbhost=$url['host'];
-            $dbname=substr($url['path'],1);
-            $dbuser=$url['user'];
-            $dbpass=$url['pass'];
-            //$dbhost="localhost";
-            //$dbuser="root";
-            //$dbpass="password";
-            //$dbname="test_db";
-            //$dbConnection=new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-            $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
-            $pdo->setAttributre(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-error_log("PDO PDO PDO PDO PDO");
-if ($pdo==null) {
-error_log("Failed to create connection to data base");
-}
-            return $pdo;
-        };
     }
 }
