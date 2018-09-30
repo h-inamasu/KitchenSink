@@ -84,15 +84,14 @@ class TextMessageHandler implements EventHandler
         switch ($text) {
             case 'sql':
 error_log("----- SQL");
-                try {
                 $stmt=$this->bot->pdo->query("select * from pg_user;");
+                if ($this->bot->pdo==null) {
+error_log("null null null null null");
+                }
 error_log("0000000000");
                 $users=$stmt->fetchAll();
 error_log("1111111111");
                 error_log("====> users: ".strval(count($users)));
-                } catch (PDOException $e) {
-error_log("===== Exception");
-                }
 error_log("+++++ SQL");
                 break;
             case 'liff':
