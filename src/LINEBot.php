@@ -18,6 +18,7 @@
 
 namespace LINE;
 
+use PDO;
 use LINE\LINEBot\Event\Parser\EventRequestParser;
 use LINE\LINEBot\HTTPClient;
 use LINE\LINEBot\MessageBuilder;
