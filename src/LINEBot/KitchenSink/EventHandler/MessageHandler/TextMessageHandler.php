@@ -82,12 +82,6 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
-            case 'sql':
-error_log("----- sql");
-                $stmt=$this->pdo->query("select * from pg_user;");
-                $users=$stmt->fetchAll();
-error_log("+++++ sql");
-                break;
             case 'liff':
 error_log("----- liff");
             $messageTemplate = new TextMessageBuilder('line://app/1611148065-12Ao52Qx');
