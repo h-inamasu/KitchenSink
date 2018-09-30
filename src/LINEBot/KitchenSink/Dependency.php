@@ -41,32 +41,27 @@ class Dependency
             $channelSecret = $settings['bot']['channelSecret'];
             $channelToken = $settings['bot']['channelToken'];
             $apiEndpointBase = $settings['apiEndpointBase'];
+            $pdo=$c->get('pdo');
             $bot = new LINEBot(new CurlHTTPClient($channelToken), [
                 'channelSecret' => $channelSecret,
                 'endpointBase' => $apiEndpointBase, // <= Normally, you can omit this
+                'pdo'=>$pdo,
             ]);
-            $pdo=$c->get('pdo');
-error_log("+++++ BOT");
             return $bot;
         };
 
         $container['pdo']=function($c) {
-error_log("----- PDO");
             $url=parse_url(getenv('DATABASE_URL'));
-error_log("1111111111");
             $host=$url['host'];
             $dbname=substr($url['path'],1);
-error_log("2222222222");
             $user=$url['user'];
             $password=$url['pass'];
             $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
-error_log("3333333333");
 if ($pdo==null) {
 error_log("Failed to connect to data base");
 } else {
 error_log("Succeeded to connect to data base");
 }
-error_log("+++++ PDO");
             return $pdo;
         };
     }
