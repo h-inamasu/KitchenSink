@@ -18,6 +18,7 @@
 
 namespace LINE\LINEBot\KitchenSink;
 
+use PDO;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 
@@ -58,7 +59,7 @@ error_log("1111111111");
 error_log("2222222222");
             $user=$url['user'];
             $password=$url['pass'];
-            $pdo=new PDO::PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
+            $pdo=new PDO("pgsql:host=$host;dbname=$dbname",$user,$password);
 error_log("3333333333");
 if ($pdo==null) {
 error_log("Failed to connect to data base");
