@@ -94,7 +94,7 @@ error_log("----- QA1");
                     ]),
                     new CarouselColumnTemplateBuilder('buz','qux',$imageUrl, [
                         new PostbackTemplateActionBuilder('Add to cart','action=add&itemid=123'),
-                        new MessageTemplateActionBuilder('','hello hello'),
+                        new MessageTemplateActionBuilder('Say message', 'hello hello'),
                     ]),
                 ]);
                 $templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
