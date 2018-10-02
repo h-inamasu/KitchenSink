@@ -88,10 +88,11 @@ error_log("----- QA1");
                 //$imageUrl=UrlBuilder::buildUrl($this->req,['static','buttons','1040.jpg']);
                 $imageUrl=null;
                 $carouselTemplateBuilder=new CarouselTemplateBuilder([
-                    new CarouselColumnTemplateBuilder('foo','bar',$imageUrl, [
-                        new UriTemplateActionBuilder('Go to line.me','https://line.me'),
-                        new PostbackTemplateActionBuilder('Buy','action=buy&itemid=123'),
-                    ]),
+                    new CarouselColumnTemplateBuilder('foo','bar',$imageUrl,null),
+                    //new CarouselColumnTemplateBuilder('foo','bar',$imageUrl, [
+                    //    new UriTemplateActionBuilder('Go to line.me','https://line.me'),
+                    //    new PostbackTemplateActionBuilder('Buy','action=buy&itemid=123'),
+                    //]),
                     new CarouselColumnTemplateBuilder('buz','qux',$imageUrl, [
                         new PostbackTemplateActionBuilder('Add to cart','action=add&itemid=123'),
                         new MessageTemplateActionBuilder('Say message','hello hello'),
