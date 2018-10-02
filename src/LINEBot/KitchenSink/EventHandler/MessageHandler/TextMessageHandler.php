@@ -86,7 +86,7 @@ class TextMessageHandler implements EventHandler
             case 'qa1':
 error_log("----- QA1");
                 //$imageUrl=UrlBuilder::buildUrl($this->req,['static','buttons','1040.jpg']);
-                $imageUrl=null;
+                $imageUrl='https://onepiece-linebot.herokuapp.com/static/shuwa-logo.png';
                 $carouselTemplateBuilder=new CarouselTemplateBuilder([
                     new CarouselColumnTemplateBuilder('foo','bar',$imageUrl, [
                         new UriTemplateActionBuilder('Go to line.me','https://line.me'),
