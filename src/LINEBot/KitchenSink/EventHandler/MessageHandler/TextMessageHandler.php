@@ -83,6 +83,28 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
+            case 'qa1':
+error_log("----- QA1");
+                //$imageUrl=UrlBuilder::buildUrl($this->req,['static','buttons','1040.jpg']);
+                $imageUrl=null;
+                $carouselTemplateBuilder=new CarouselTemplateBuilder([
+                    new CarouselColumnTemplateBuilder('foo','bar',$imageUrl, [
+                        new UriTemplateActionBuilder('Go to line.me','https://line.me'),
+                        new PostbackTemplateActionBuilder('Buy','action=buy&itemid=123'),
+                    ]),
+                    new CarouselColumnTemplateBuilder('buz','qux',$imageUrl, [
+                        new PostbackTemplateActionBuilder('Add to cart','action=add&itemid=123'),
+                        new MessageTemplateActionBuilder('Say message','hello hello'),
+                    ]),
+                ]);
+                $templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
+                $this->bot->replyMessage($replyToken, $templateMessage);
+error_log("+++++ QA1");
+                break;
+            case 'qa2':
+error_log("----- QA2");
+error_log("+++++ QA2");
+                break;
             case 'sql':
 error_log("----- SQL");
                 $stmt=$this->bot->pdo->query("select * from pg_user;");
