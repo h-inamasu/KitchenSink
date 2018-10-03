@@ -112,7 +112,7 @@ error_log("----- QA1");
         $res=$this->bot->replyMessage(
             $replyToken,
             FlexMessageBuilder::builder()
-                ->setAltText('Q&A')
+                ->setAltText('よくあるご質問')
                 ->setContents(
                     CarouselContainerBuilder::builder()
                         ->setContents([
@@ -202,13 +202,13 @@ error_log("----- QA1");
                                                 ->setLayout(ComponentLayout::VERTICAL)
                                                 ->setContents([
                                                     TextComponentBuilder::builder()
-                                                        ->setText('販売方法は?')
+                                                        ->setText('支払い方法は?')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::XL)
                                                         ->setFlex(0),
                                                     TextComponentBuilder::builder()
-                                                        ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
+                                                        ->setText("灯油早割サービス:クレジットカード払いのみお取り扱いをしております\n大口割引サービス:クレジット払い／現金払いの選択ができます。")
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::SM)
