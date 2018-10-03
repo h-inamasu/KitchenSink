@@ -118,9 +118,13 @@ error_log("----- QA1");
                         ->setContents([
                             BubbleContainerBuilder::builder()
                                 ->setHeader(
-                                    TextComponentBuilder::builder()
-                                        ->setText('Q&A')
-                                    )
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setContents([
+                                            TextComponentBuilder::builder()
+                                                ->setText('Q&A')
+                                        ])
+                                )
                                 ->setHero(
                                     ImageComponentBuilder::builder()
                                         ->setSize(ComponentImageSize::FULL)
