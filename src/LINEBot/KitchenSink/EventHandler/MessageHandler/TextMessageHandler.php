@@ -73,8 +73,6 @@ use LINE\LINEBot\Constant\Flex\ComponentButtonHeight;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
 use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
 use LINE\LINEBot\Constant\Flex\ComponentGravity;
-use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
-use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
 
 class TextMessageHandler implements EventHandler
 {
