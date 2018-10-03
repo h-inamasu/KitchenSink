@@ -112,11 +112,15 @@ error_log("----- QA1");
         $res=$this->bot->replyMessage(
             $replyToken,
             FlexMessageBuilder::builder()
-                ->setAltText('Shopping')
+                ->setAltText('Q&A')
                 ->setContents(
                     CarouselContainerBuilder::builder()
                         ->setContents([
                             BubbleContainerBuilder::builder()
+                                ->setHeader(
+                                    TextComponentBuilder::builder()
+                                        ->setText('Q&A')
+                                    )
                                 ->setHero(
                                     ImageComponentBuilder::builder()
                                         ->setSize(ComponentImageSize::FULL)
