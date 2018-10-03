@@ -122,7 +122,7 @@ error_log("----- QA1");
                                         ->setLayout(ComponentLayout::VERTICAL)
                                         ->setContents([
                                             TextComponentBuilder::builder()
-                                                ->setText('Q&A')
+                                                ->setText('よくあるご質問')
                                         ])
                                 )
                                 //->setHero(
@@ -154,29 +154,29 @@ error_log("----- QA1");
                                                         ->setFlex(0)
                                                 ])
                                         ])
-                                )
-                                ->setFooter(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setSpacing(ComponentSpacing::SM)
-                                        ->setContents([
-                                            ButtonComponentBuilder::builder()
-                                                ->setStyle(ComponentButtonStyle::PRIMARY)
-                                                ->setAction(
-                                                    new UriTemplateActionBuilder(
-                                                        'Add to Cart',
-                                                        'https://example.com'
-                                                    )
-                                                ),
-                                            ButtonComponentBuilder::builder()
-                                                ->setAction(
-                                                    new UriTemplateActionBuilder(
-                                                        'Add to wishlist',
-                                                        'https://example.com'
-                                                    )
-                                                )
-                                        ])
                                 ),
+                                //->setFooter(
+                                //    BoxComponentBuilder::builder()
+                                //        ->setLayout(ComponentLayout::VERTICAL)
+                                //        ->setSpacing(ComponentSpacing::SM)
+                                //        ->setContents([
+                                //            ButtonComponentBuilder::builder()
+                                //                ->setStyle(ComponentButtonStyle::PRIMARY)
+                                //                ->setAction(
+                                //                    new UriTemplateActionBuilder(
+                                //                        'Add to Cart',
+                                //                        'https://example.com'
+                                //                    )
+                                //                ),
+                                //            ButtonComponentBuilder::builder()
+                                //                ->setAction(
+                                //                    new UriTemplateActionBuilder(
+                                //                        'Add to wishlist',
+                                //                        'https://example.com'
+                                //                    )
+                                //                )
+                                //        ])
+                                //),
                             BubbleContainerBuilder::builder()
                                 ->setHero(
                                     ImageComponentBuilder::builder()
