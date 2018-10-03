@@ -137,22 +137,17 @@ error_log("----- QA1");
                                         ->setLayout(ComponentLayout::VERTICAL)
                                         ->setSpacing(ComponentSpacing::SM)
                                         ->setContents([
-                                            TextComponentBuilder::builder()
-                                                ->setText('Arm Chair, White')
-                                                ->setWrap(true)
-                                                ->setWeight(ComponentFontWeight::BOLD)
-                                                ->setSize(ComponentFontSize::XL),
                                             BoxComponentBuilder::builder()
-                                                ->setLayout(ComponentLayout::BASELINE)
+                                                ->setLayout(ComponentLayout::VERTICAL)
                                                 ->setContents([
                                                     TextComponentBuilder::builder()
-                                                        ->setText('$49')
+                                                        ->setText('販売方法は?')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::XL)
                                                         ->setFlex(0),
                                                     TextComponentBuilder::builder()
-                                                        ->setText('.99')
+                                                        ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::SM)
