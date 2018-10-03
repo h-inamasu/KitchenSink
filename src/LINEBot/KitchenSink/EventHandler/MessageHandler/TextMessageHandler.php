@@ -92,7 +92,7 @@ error_log("+++++ SESSION");
             case 'session':
 error_log("----- SESSION");
                 session_start();
-error_log("      SESSION[mode]: ".strval($_SESSION['mode']));
+error_log("      SESSION[mode]: ".session_name());
                 $_SESSION['mode']++;
 error_log("+++++ SESSION");
                 break;
