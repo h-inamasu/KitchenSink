@@ -83,6 +83,12 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
+            case '_session':
+error_log("----- SESSION");
+                session_start();
+                $_SESSION['mode']=0;
+error_log("+++++ SESSION");
+                break;
             case 'session':
 error_log("----- SESSION");
 error_log("      SESSION[mode]: ".strval($_SESSION['mode']));
