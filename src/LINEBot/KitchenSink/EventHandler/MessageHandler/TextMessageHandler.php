@@ -263,13 +263,13 @@ error_log("----- QA1");
                                                 ->setLayout(ComponentLayout::VERTICAL)
                                                 ->setContents([
                                                     TextComponentBuilder::builder()
-                                                        ->setText('販売方法は?')
+                                                        ->setText('ネットの注文方法は?')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::XL)
                                                         ->setFlex(0),
                                                     TextComponentBuilder::builder()
-                                                        ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
+                                                        ->setText('トップページより新規会員登録をして頂き、ログイン後に表示される、注文画面よりご注文ください。')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::SM)
@@ -365,23 +365,6 @@ error_log("----- QA1");
                             //                    )
                             //            ])
                             //    ),
-                            BubbleContainerBuilder::builder()
-                                ->setBody(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setSpacing(ComponentSpacing::SM)
-                                        ->setContents([
-                                            ButtonComponentBuilder::builder()
-                                                ->setFlex(1)
-                                                ->setGravity(ComponentGravity::CENTER)
-                                                ->setAction(
-                                                    new UriTemplateActionBuilder(
-                                                        'See more',
-                                                        'https://example.com'
-                                                    )
-                                                )
-                                        ])
-                                )
                         ])
                 )
         );
