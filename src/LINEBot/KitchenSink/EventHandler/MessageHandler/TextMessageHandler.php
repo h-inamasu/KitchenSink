@@ -85,8 +85,8 @@ class TextMessageHandler implements EventHandler
         switch ($text) {
             case 'qa1':
 error_log("----- QA1");
-        $res=$this->bot->pushMessage(
-            'DESTINATION',
+        $res=$this->bot->replyMessage(
+            $replyToken,
             FlexMessageBuilder::builder()
                 ->setAltText('Shopping')
                 ->setContents(
