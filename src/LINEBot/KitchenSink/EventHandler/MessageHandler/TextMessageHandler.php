@@ -125,13 +125,13 @@ error_log("----- QA1");
                                                 ->setText('Q&A')
                                         ])
                                 )
-                                ->setHero(
-                                    ImageComponentBuilder::builder()
-                                        ->setSize(ComponentImageSize::FULL)
-                                        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
-                                        ->setAspectMode(ComponentImageAspectMode::COVER)
-                                        ->setUrl('https://example.com/photo1.png')
-                                )
+                                //->setHero(
+                                //    ImageComponentBuilder::builder()
+                                //        ->setSize(ComponentImageSize::FULL)
+                                //        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
+                                //        ->setAspectMode(ComponentImageAspectMode::COVER)
+                                //        ->setUrl('https://example.com/photo1.png')
+                                //)
                                 ->setBody(
                                     BoxComponentBuilder::builder()
                                         ->setLayout(ComponentLayout::VERTICAL)
