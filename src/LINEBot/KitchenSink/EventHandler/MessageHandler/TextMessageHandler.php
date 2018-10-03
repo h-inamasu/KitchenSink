@@ -83,6 +83,12 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
+            case 'session':
+error_log("----- SESSION");
+error_log("      SESSION[mode]: ".strval($_SESSION['mode']));
+                $_SESSION['mode']++;
+error_log("+++++ SESSION");
+                break;
             case 'qa1':
 error_log("----- QA1");
                 //$imageUrl=UrlBuilder::buildUrl($this->req,['static','buttons','1040.jpg']);
