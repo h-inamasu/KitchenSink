@@ -50,6 +50,33 @@ use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
 
+use LINE\LINEBot\Constant\Flex\ComponentLayout;
+use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
+use PHPUnit\Framework\TestCase;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
+use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+use LINE\LINEBot\Constant\Flex\ComponentIconSize;
+use LINE\LINEBot\Constant\Flex\ComponentImageSize;
+use LINE\LINEBot\Constant\Flex\ComponentImageAspectRatio;
+use LINE\LINEBot\Constant\Flex\ComponentImageAspectMode;
+use LINE\LINEBot\Constant\Flex\ComponentFontSize;
+use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
+use LINE\LINEBot\Constant\Flex\ComponentMargin;
+use LINE\LINEBot\Constant\Flex\ComponentSpacing;
+use LINE\LINEBot\Constant\Flex\ComponentButtonStyle;
+use LINE\LINEBot\Constant\Flex\ComponentButtonHeight;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
+use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
+use LINE\LINEBot\Constant\Flex\ComponentGravity;
+use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
+use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
+
 class TextMessageHandler implements EventHandler
 {
     /** @var LINEBot $bot */
