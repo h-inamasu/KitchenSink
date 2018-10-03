@@ -70,6 +70,9 @@ class FollowEventHandler implements EventHandler
 
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
+        session_start();
+        $_SESSION['mode']=0;
+
         error_log("----- Richmenu");
         $richMenuName='Rich Menu Name';
         $richMenuFound=FALSE;
