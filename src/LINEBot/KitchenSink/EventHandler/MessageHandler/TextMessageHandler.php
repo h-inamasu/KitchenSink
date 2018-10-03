@@ -51,7 +51,6 @@ use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
 
 use LINE\LINEBot\Constant\Flex\ComponentLayout;
-use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
 use PHPUnit\Framework\TestCase;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
