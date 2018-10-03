@@ -178,71 +178,193 @@ error_log("----- QA1");
                                 //        ])
                                 //),
                             BubbleContainerBuilder::builder()
-                                ->setHero(
-                                    ImageComponentBuilder::builder()
-                                        ->setSize(ComponentImageSize::FULL)
-                                        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
-                                        ->setAspectMode(ComponentImageAspectMode::COVER)
-                                        ->setUrl('https://example.com/photo2.png')
+                                ->setHeader(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setContents([
+                                            TextComponentBuilder::builder()
+                                                ->setText('よくあるご質問')
+                                        ])
                                 )
+                                //->setHero(
+                                //    ImageComponentBuilder::builder()
+                                //        ->setSize(ComponentImageSize::FULL)
+                                //        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
+                                //        ->setAspectMode(ComponentImageAspectMode::COVER)
+                                //        ->setUrl('https://example.com/photo1.png')
+                                //)
                                 ->setBody(
                                     BoxComponentBuilder::builder()
                                         ->setLayout(ComponentLayout::VERTICAL)
                                         ->setSpacing(ComponentSpacing::SM)
                                         ->setContents([
-                                            TextComponentBuilder::builder()
-                                                ->setText('Metal Desk Lamp')
-                                                ->setWrap(true)
-                                                ->setWeight(ComponentFontWeight::BOLD)
-                                                ->setSize(ComponentFontSize::XL),
                                             BoxComponentBuilder::builder()
-                                                ->setLayout(ComponentLayout::BASELINE)
+                                                ->setLayout(ComponentLayout::VERTICAL)
                                                 ->setContents([
                                                     TextComponentBuilder::builder()
-                                                        ->setText('$11')
+                                                        ->setText('販売方法は?')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::XL)
                                                         ->setFlex(0),
                                                     TextComponentBuilder::builder()
-                                                        ->setText('.99')
+                                                        ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::SM)
                                                         ->setFlex(0)
-                                                ]),
+                                                ])
+                                        ])
+                                ),
+                                //->setFooter(
+                                //    BoxComponentBuilder::builder()
+                                //        ->setLayout(ComponentLayout::VERTICAL)
+                                //        ->setSpacing(ComponentSpacing::SM)
+                                //        ->setContents([
+                                //            ButtonComponentBuilder::builder()
+                                //                ->setStyle(ComponentButtonStyle::PRIMARY)
+                                //                ->setAction(
+                                //                    new UriTemplateActionBuilder(
+                                //                        'Add to Cart',
+                                //                        'https://example.com'
+                                //                    )
+                                //                ),
+                                //            ButtonComponentBuilder::builder()
+                                //                ->setAction(
+                                //                    new UriTemplateActionBuilder(
+                                //                        'Add to wishlist',
+                                //                        'https://example.com'
+                                //                    )
+                                //                )
+                                //        ])
+                                //),
+                            BubbleContainerBuilder::builder()
+                                ->setHeader(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setContents([
                                             TextComponentBuilder::builder()
-                                                ->setText('Temporarily out of stock')
-                                                ->setWrap(true)
-                                                ->setSize(ComponentFontSize::XXS)
-                                                ->setMargin(ComponentMargin::MD)
-                                                ->setColor('#ff5551')
-                                                ->setFlex(0)
+                                                ->setText('よくあるご質問')
                                         ])
                                 )
-                                ->setFooter(
+                                //->setHero(
+                                //    ImageComponentBuilder::builder()
+                                //        ->setSize(ComponentImageSize::FULL)
+                                //        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
+                                //        ->setAspectMode(ComponentImageAspectMode::COVER)
+                                //        ->setUrl('https://example.com/photo1.png')
+                                //)
+                                ->setBody(
                                     BoxComponentBuilder::builder()
                                         ->setLayout(ComponentLayout::VERTICAL)
                                         ->setSpacing(ComponentSpacing::SM)
                                         ->setContents([
-                                            ButtonComponentBuilder::builder()
-                                                ->setStyle(ComponentButtonStyle::PRIMARY)
-                                                ->setColor('#aaaaaa')
-                                                ->setAction(
-                                                    new UriTemplateActionBuilder(
-                                                        'Add to Cart',
-                                                        'https://example.com'
-                                                    )
-                                                ),
-                                            ButtonComponentBuilder::builder()
-                                                ->setAction(
-                                                    new UriTemplateActionBuilder(
-                                                        'Add to wishlist',
-                                                        'https://example.com'
-                                                    )
-                                                )
+                                            BoxComponentBuilder::builder()
+                                                ->setLayout(ComponentLayout::VERTICAL)
+                                                ->setContents([
+                                                    TextComponentBuilder::builder()
+                                                        ->setText('販売方法は?')
+                                                        ->setWrap(true)
+                                                        ->setWeight(ComponentFontWeight::BOLD)
+                                                        ->setSize(ComponentFontSize::XL)
+                                                        ->setFlex(0),
+                                                    TextComponentBuilder::builder()
+                                                        ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
+                                                        ->setWrap(true)
+                                                        ->setWeight(ComponentFontWeight::BOLD)
+                                                        ->setSize(ComponentFontSize::SM)
+                                                        ->setFlex(0)
+                                                ])
                                         ])
                                 ),
+                                //->setFooter(
+                                //    BoxComponentBuilder::builder()
+                                //        ->setLayout(ComponentLayout::VERTICAL)
+                                //        ->setSpacing(ComponentSpacing::SM)
+                                //        ->setContents([
+                                //            ButtonComponentBuilder::builder()
+                                //                ->setStyle(ComponentButtonStyle::PRIMARY)
+                                //                ->setAction(
+                                //                    new UriTemplateActionBuilder(
+                                //                        'Add to Cart',
+                                //                        'https://example.com'
+                                //                    )
+                                //                ),
+                                //            ButtonComponentBuilder::builder()
+                                //                ->setAction(
+                                //                    new UriTemplateActionBuilder(
+                                //                        'Add to wishlist',
+                                //                        'https://example.com'
+                                //                    )
+                                //                )
+                                //        ])
+                                //),
+                            //BubbleContainerBuilder::builder()
+                            //    ->setHero(
+                            //        ImageComponentBuilder::builder()
+                            //            ->setSize(ComponentImageSize::FULL)
+                            //            ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
+                            //            ->setAspectMode(ComponentImageAspectMode::COVER)
+                            //            ->setUrl('https://example.com/photo2.png')
+                            //    )
+                            //    ->setBody(
+                            //        BoxComponentBuilder::builder()
+                            //            ->setLayout(ComponentLayout::VERTICAL)
+                            //            ->setSpacing(ComponentSpacing::SM)
+                            //            ->setContents([
+                            //                TextComponentBuilder::builder()
+                            //                    ->setText('Metal Desk Lamp')
+                            //                    ->setWrap(true)
+                            //                    ->setWeight(ComponentFontWeight::BOLD)
+                            //                    ->setSize(ComponentFontSize::XL),
+                            //                BoxComponentBuilder::builder()
+                            //                    ->setLayout(ComponentLayout::BASELINE)
+                            //                    ->setContents([
+                            //                        TextComponentBuilder::builder()
+                            //                            ->setText('$11')
+                            //                            ->setWrap(true)
+                            //                            ->setWeight(ComponentFontWeight::BOLD)
+                            //                            ->setSize(ComponentFontSize::XL)
+                            //                            ->setFlex(0),
+                            //                        TextComponentBuilder::builder()
+                            //                            ->setText('.99')
+                            //                            ->setWrap(true)
+                            //                            ->setWeight(ComponentFontWeight::BOLD)
+                            //                            ->setSize(ComponentFontSize::SM)
+                            //                            ->setFlex(0)
+                            //                    ]),
+                            //                TextComponentBuilder::builder()
+                            //                    ->setText('Temporarily out of stock')
+                            //                    ->setWrap(true)
+                            //                    ->setSize(ComponentFontSize::XXS)
+                            //                    ->setMargin(ComponentMargin::MD)
+                            //                    ->setColor('#ff5551')
+                            //                    ->setFlex(0)
+                            //            ])
+                            //    )
+                            //    ->setFooter(
+                            //        BoxComponentBuilder::builder()
+                            //            ->setLayout(ComponentLayout::VERTICAL)
+                            //            ->setSpacing(ComponentSpacing::SM)
+                            //            ->setContents([
+                            //                ButtonComponentBuilder::builder()
+                            //                    ->setStyle(ComponentButtonStyle::PRIMARY)
+                            //                    ->setColor('#aaaaaa')
+                            //                    ->setAction(
+                            //                        new UriTemplateActionBuilder(
+                            //                            'Add to Cart',
+                            //                            'https://example.com'
+                            //                        )
+                            //                    ),
+                            //                ButtonComponentBuilder::builder()
+                            //                    ->setAction(
+                            //                        new UriTemplateActionBuilder(
+                            //                            'Add to wishlist',
+                            //                            'https://example.com'
+                            //                        )
+                            //                    )
+                            //            ])
+                            //    ),
                             BubbleContainerBuilder::builder()
                                 ->setBody(
                                     BoxComponentBuilder::builder()
