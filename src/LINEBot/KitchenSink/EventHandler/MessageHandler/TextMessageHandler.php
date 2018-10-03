@@ -83,35 +83,174 @@ class TextMessageHandler implements EventHandler
         $this->logger->info("Got text message from $replyToken: $text");
 
         switch ($text) {
-            case '_session':
-error_log("----- SESSION");
-                session_start();
-                $_SESSION['mode']=0;
-error_log("+++++ SESSION");
-                break;
-            case 'session':
-error_log("----- SESSION");
-                session_start();
-error_log("      SESSION[mode]: ".session_name());
-                $_SESSION['mode']++;
-error_log("+++++ SESSION");
-                break;
             case 'qa1':
 error_log("----- QA1");
+        $res=$this->bot->pushMessage(
+            'DESTINATION',
+            FlexMessageBuilder::builder()
+                ->setAltText('Shopping')
+                ->setContents(
+                    CarouselContainerBuilder::builder()
+                        ->setContents([
+                            BubbleContainerBuilder::builder()
+                                ->setHero(
+                                    ImageComponentBuilder::builder()
+                                        ->setSize(ComponentImageSize::FULL)
+                                        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
+                                        ->setAspectMode(ComponentImageAspectMode::COVER)
+                                        ->setUrl('https://example.com/photo1.png')
+                                )
+                                ->setBody(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setSpacing(ComponentSpacing::SM)
+                                        ->setContents([
+                                            TextComponentBuilder::builder()
+                                                ->setText('Arm Chair, White')
+                                                ->setWrap(true)
+                                                ->setWeight(ComponentFontWeight::BOLD)
+                                                ->setSize(ComponentFontSize::XL),
+                                            BoxComponentBuilder::builder()
+                                                ->setLayout(ComponentLayout::BASELINE)
+                                                ->setContents([
+                                                    TextComponentBuilder::builder()
+                                                        ->setText('$49')
+                                                        ->setWrap(true)
+                                                        ->setWeight(ComponentFontWeight::BOLD)
+                                                        ->setSize(ComponentFontSize::XL)
+                                                        ->setFlex(0),
+                                                    TextComponentBuilder::builder()
+                                                        ->setText('.99')
+                                                        ->setWrap(true)
+                                                        ->setWeight(ComponentFontWeight::BOLD)
+                                                        ->setSize(ComponentFontSize::SM)
+                                                        ->setFlex(0)
+                                                ])
+                                        ])
+                                )
+                                ->setFooter(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setSpacing(ComponentSpacing::SM)
+                                        ->setContents([
+                                            ButtonComponentBuilder::builder()
+                                                ->setStyle(ComponentButtonStyle::PRIMARY)
+                                                ->setAction(
+                                                    new UriTemplateActionBuilder(
+                                                        'Add to Cart',
+                                                        'https://example.com'
+                                                    )
+                                                ),
+                                            ButtonComponentBuilder::builder()
+                                                ->setAction(
+                                                    new UriTemplateActionBuilder(
+                                                        'Add to wishlist',
+                                                        'https://example.com'
+                                                    )
+                                                )
+                                        ])
+                                ),
+                            BubbleContainerBuilder::builder()
+                                ->setHero(
+                                    ImageComponentBuilder::builder()
+                                        ->setSize(ComponentImageSize::FULL)
+                                        ->setAspectRatio(ComponentImageAspectRatio::R20TO13)
+                                        ->setAspectMode(ComponentImageAspectMode::COVER)
+                                        ->setUrl('https://example.com/photo2.png')
+                                )
+                                ->setBody(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setSpacing(ComponentSpacing::SM)
+                                        ->setContents([
+                                            TextComponentBuilder::builder()
+                                                ->setText('Metal Desk Lamp')
+                                                ->setWrap(true)
+                                                ->setWeight(ComponentFontWeight::BOLD)
+                                                ->setSize(ComponentFontSize::XL),
+                                            BoxComponentBuilder::builder()
+                                                ->setLayout(ComponentLayout::BASELINE)
+                                                ->setContents([
+                                                    TextComponentBuilder::builder()
+                                                        ->setText('$11')
+                                                        ->setWrap(true)
+                                                        ->setWeight(ComponentFontWeight::BOLD)
+                                                        ->setSize(ComponentFontSize::XL)
+                                                        ->setFlex(0),
+                                                    TextComponentBuilder::builder()
+                                                        ->setText('.99')
+                                                        ->setWrap(true)
+                                                        ->setWeight(ComponentFontWeight::BOLD)
+                                                        ->setSize(ComponentFontSize::SM)
+                                                        ->setFlex(0)
+                                                ]),
+                                            TextComponentBuilder::builder()
+                                                ->setText('Temporarily out of stock')
+                                                ->setWrap(true)
+                                                ->setSize(ComponentFontSize::XXS)
+                                                ->setMargin(ComponentMargin::MD)
+                                                ->setColor('#ff5551')
+                                                ->setFlex(0)
+                                        ])
+                                )
+                                ->setFooter(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setSpacing(ComponentSpacing::SM)
+                                        ->setContents([
+                                            ButtonComponentBuilder::builder()
+                                                ->setStyle(ComponentButtonStyle::PRIMARY)
+                                                ->setColor('#aaaaaa')
+                                                ->setAction(
+                                                    new UriTemplateActionBuilder(
+                                                        'Add to Cart',
+                                                        'https://example.com'
+                                                    )
+                                                ),
+                                            ButtonComponentBuilder::builder()
+                                                ->setAction(
+                                                    new UriTemplateActionBuilder(
+                                                        'Add to wishlist',
+                                                        'https://example.com'
+                                                    )
+                                                )
+                                        ])
+                                ),
+                            BubbleContainerBuilder::builder()
+                                ->setBody(
+                                    BoxComponentBuilder::builder()
+                                        ->setLayout(ComponentLayout::VERTICAL)
+                                        ->setSpacing(ComponentSpacing::SM)
+                                        ->setContents([
+                                            ButtonComponentBuilder::builder()
+                                                ->setFlex(1)
+                                                ->setGravity(ComponentGravity::CENTER)
+                                                ->setAction(
+                                                    new UriTemplateActionBuilder(
+                                                        'See more',
+                                                        'https://example.com'
+                                                    )
+                                                )
+                                        ])
+                                )
+                        ])
+                )
+        );
+
                 //$imageUrl=UrlBuilder::buildUrl($this->req,['static','buttons','1040.jpg']);
-                $imageUrl='/app/static/shuwa-logo.jpg';
-                $carouselTemplateBuilder=new CarouselTemplateBuilder([
-                    new CarouselColumnTemplateBuilder('foo','bar',$imageUrl, [
-                        new UriTemplateActionBuilder('Go to line.me','https://line.me'),
-                        new PostbackTemplateActionBuilder('Buy','action=buy&itemid=123'),
-                    ]),
-                    new CarouselColumnTemplateBuilder('buz','qux',$imageUrl, [
-                        new PostbackTemplateActionBuilder('Add to cart','action=add&itemid=123'),
-                        new MessageTemplateActionBuilder('Say message', 'hello hello'),
-                    ]),
-                ]);
-                $templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
-                $this->bot->replyMessage($replyToken, $templateMessage);
+                //$imageUrl='/app/static/shuwa-logo.jpg';
+                //$carouselTemplateBuilder=new CarouselTemplateBuilder([
+                //    new CarouselColumnTemplateBuilder('foo','bar',$imageUrl, [
+                //        new UriTemplateActionBuilder('Go to line.me','https://line.me'),
+                //        new PostbackTemplateActionBuilder('Buy','action=buy&itemid=123'),
+                //    ]),
+                //    new CarouselColumnTemplateBuilder('buz','qux',$imageUrl, [
+                //        new PostbackTemplateActionBuilder('Add to cart','action=add&itemid=123'),
+                //        new MessageTemplateActionBuilder('Say message', 'hello hello'),
+                //    ]),
+                //]);
+                //$templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
+                //$this->bot->replyMessage($replyToken, $templateMessage);
 error_log("+++++ QA1");
                 break;
             case 'qa2':
