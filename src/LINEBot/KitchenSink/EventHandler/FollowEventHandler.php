@@ -51,23 +51,28 @@ class FollowEventHandler implements EventHandler
 
     public function handle()
     {
-        $code='10008d';
-        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
-        $moonGrin=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
-        $code='100079';
-        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
-        $hahaha=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
-        $code='100090';
-        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
-        $content=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
-        $message="お友達登録ありがとうございます".$moonGrin."\n" .
-                 "いつでもお気軽にお問い合わせメッセージをお送りください！".$hahaha."\n".
-                 "シューワのお水をご利用中のお客様は\n" .
-                 "■お客様番号（チラシに記載の番号）\n" .
-                 "このメッセージにお送りください！\n" .
-                 "お送り頂いた方にはもれなくお水12ℓ一本プレゼント！\n" .
-                 "みなさまのご返信おまちしております".$content;
+//        $code='10008d';
+//        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
+//        $moonGrin=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
+//        $code='100079';
+//        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
+//        $hahaha=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
+//        $code='100090';
+//        $bin=hex2bin(str_repeat('0',8-strlen($code)).$code);
+//        $content=mb_convert_encoding($bin,'UTF-8','UTF-32BE');
+//        $message="お友達登録ありがとうございます".$moonGrin."\n" .
+//                 "いつでもお気軽にお問い合わせメッセージをお送りください！".$hahaha."\n".
+//                 "シューワのお水をご利用中のお客様は\n" .
+//                 "■お客様番号（チラシに記載の番号）\n" .
+//                 "このメッセージにお送りください！\n" .
+//                 "お送り頂いた方にはもれなくお水12ℓ一本プレゼント！\n" .
+//                 "みなさまのご返信おまちしております".$content;
+        $messsage="友達登録ありがとう御座います！\n".
+                  "これからお得な情報を配信していきますので、ご期待ください！\n".
+                  "またLINEから灯油のご注文も可能となりましたので、是非ご利用ください！";
+        $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
+        $message="まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
         error_log("----- Richmenu");
