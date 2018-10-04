@@ -71,9 +71,9 @@ class FollowEventHandler implements EventHandler
         $userId="100";
         $stmt=$pdo->prepare("INSERT INTO Users (userid,mode) VALUES (:userid,:mode)");
 error_log("0000000000");
-        $stmt=bindParam(':userid',$userId,PDO::PARAM_STR);
+        $stmt->bindParam(':userid',$userId,PDO::PARAM_STR);
 error_log("1111111111");
-        $stmt=bindValue(':mode',1,PDO::PARAM_INT);
+        $stmt->bindValue(':mode',1,PDO::PARAM_INT);
 error_log("2222222222");
         $stmt->execute();
 
