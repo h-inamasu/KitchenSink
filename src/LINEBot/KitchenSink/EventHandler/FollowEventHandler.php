@@ -69,8 +69,8 @@ class FollowEventHandler implements EventHandler
 //                 "みなさまのご返信おまちしております".$content;
         $messsage="友達登録ありがとう御座います！\n".
                   "これからお得な情報を配信していきますので、ご期待ください！\n".
-                  "またLINEから灯油のご注文も可能となりましたので、是非ご利用ください！\n".
-                  "まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
+                  "またLINEから灯油のご注文も可能となりましたので、是非ご利用ください！\n";
+                  //"まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
         error_log("----- Richmenu");
