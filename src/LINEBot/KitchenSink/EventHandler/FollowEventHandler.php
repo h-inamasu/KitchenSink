@@ -68,7 +68,8 @@ class FollowEventHandler implements EventHandler
 //                 "お送り頂いた方にはもれなくお水12ℓ一本プレゼント！\n" .
 //                 "みなさまのご返信おまちしております".$content;
         $pdo=$this->bot->pdo;
-        $stmt=$pdo->query("INSERT INTO Users (userid,mode) VALUES ($this->followEvent->getUserId(),1)");
+        $userId=$this->followEvent->getUserId();
+        $stmt=$pdo->query("INSERT INTO Users (userid,mode) VALUES ('$userId',1)");
 error_log("0000000000");
 
         $message1="友達登録ありがとう御座います！\n".
