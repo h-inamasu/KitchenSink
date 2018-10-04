@@ -73,6 +73,10 @@ class FollowEventHandler implements EventHandler
                   "まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
         $this->bot->replyText($this->followEvent->getReplyToken(),$message);
 
+        $message="まずはお名前をご入力ください。";
+        $this->bot->replyText($this->followEvent->getReplyToken(),$message);
+
+        if (FALSE) {
         error_log("----- Richmenu");
         $richMenuName='Rich Menu Name';
         $richMenuFound=FALSE;
@@ -168,6 +172,7 @@ class FollowEventHandler implements EventHandler
         $httpStatus=$res->getHTTPStatus();
         $val=strval($httpStatus);
         error_log("      linkRichMenu HTTP ".$val);
+        }
 
         error_log("----- Completed");
     }
