@@ -68,10 +68,9 @@ error_log("    row==null");
 error_log("      mode==null");
         }
         if ($mode==2) {
-            //$postbackData=$this->postbackEvent->getPostbackData();
-            $postbackData='123456 7890 abc';
+            $postbackData=$this->postbackEvent->getPostbackData();
 error_log("     postbackData: ".$postbackData);
-            $dataArray=explode(" ","abc def 123 456");
+            $dataArray=explode(" ",$postbackData);
 if ($dataArray==FALSE) {
 error_log("     dataArray==FALSE");
 }
