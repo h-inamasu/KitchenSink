@@ -55,7 +55,7 @@ error_log("0000000000");
         $userId=$this->postbackEvent->getUserId();
 error_log("     userId: ".$userId);
         $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
-        $stmt->bindParam(':userId',$userI,PDO::PARAM_STR);
+        $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
         $stmt->execute();
         $row=$stmt->fetch();
 error_log("2222222222");
