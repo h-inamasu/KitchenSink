@@ -88,6 +88,6 @@ error_log("     dataArray[1]: ".$dataArray[1]);
 //            error_log("NG NG NG NG NG");
             }
         }
-error_log("+++++ PostbackEventHandler");
+//error_log("+++++ PostbackEventHandler");
     }
 }
