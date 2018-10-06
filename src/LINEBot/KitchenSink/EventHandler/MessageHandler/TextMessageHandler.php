@@ -627,6 +627,10 @@ error_log("----- default");
 error_log("      userId: ".$userId);
                     error_log("=====> ".$row['userid']);
                     if ($row['mode']==1) {
+                    $stmt=$this->bot->pdo->prepare("UPDATE Users SET mode=:mode WHERE userId=:userId");
+                    $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
+                    $stmt->bindValue(':mode',2,PDO_PARAM_INT);
+                    $stmt->execute();
                     $this->bot->replyMessage(
                         $replyToken,
                         new TemplateMessageBuilder(
