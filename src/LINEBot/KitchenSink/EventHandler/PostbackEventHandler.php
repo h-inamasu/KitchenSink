@@ -71,7 +71,7 @@ error_log("      mode==null");
             //$postbackData=$this->postbackEvent->getPostbackData();
             $postbackData='123456 7890 abc';
 error_log("     postbackData: ".$postbackData);
-            $dataArray=explode(" ",$postbackData);
+            $dataArray=explode(" ","abc def 123 456");
 if ($dataArray==FALSE) {
 error_log("     dataArray==FALSE");
 }
