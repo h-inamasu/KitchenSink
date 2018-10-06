@@ -52,22 +52,21 @@ class PostbackEventHandler implements EventHandler
 //            'Got postback ' . $this->postbackEvent->getPostbackData()
 //        );
 error_log("---- PostbackEventHandler");
-//error_log("0000000000");
-//        $userId=$this->postbackEvent->getUserId();
-//error_log("     userId: ".$userId);
-//        $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
-//        $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
-//        $stmt->execute();
-//        $row=$stmt->fetch();
-//error_log("2222222222");
-//        if ($row==null) {
-//error_log("    row==null");
-//            return;
-//        }
-//        $mode=$row['mode'];
-//        if ($mode==null) {
-//error_log("      mode==null");
-//        }
+        $userId=$this->postbackEvent->getUserId();
+error_log("     userId: ".$userId);
+        $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
+        $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
+        $stmt->execute();
+        $row=$stmt->fetch();
+error_log("2222222222");
+        if ($row==null) {
+error_log("    row==null");
+            return;
+        }
+        $mode=$row['mode'];
+        if ($mode==null) {
+error_log("      mode==null");
+        }
 //        if ($mode==2) {
 //            $postbackData=$this->postbackEvent->getPostbackData();
 //error_log("     postbackData: ".$postbackData);
