@@ -78,6 +78,11 @@ error_log("     dataArray: ".gettype($dataArray));
 error_log("     dataArray: ".strval(count($dataArray)));
 error_log("     dataArray[0]: ".$dataArray[0]);
 error_log("     dataArray[1]: ".$dataArray[1]);
+            $stmt=$this->bot->pdo->prepare("UPDATE Users SET mode=:mode name=:name WHERE userId=:userId");
+            $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
+            $stmt->bindParam(':name',$dataArray[1],PARAM_STR);
+            $stmt->bindValue(':mode',3,PDO::PARAM_INT);
+            $stmt->execute();
         }
     }
 }
