@@ -627,6 +627,16 @@ error_log("----- default");
 error_log("      userId: ".$userId);
                     error_log("=====> ".$row['userid']);
                     if ($row['mode']==1) {
+                    $this->bot->replyMessage(
+                        $replyToken,
+                        new TemplateMessageBuilder(
+                            'Confirm alt text',
+                            new ConfirmTemplateBuilder($text, [
+                                new MessageTemplateActionBuilder('Yes', 'Yes!'),
+                                new MessageTemplateActionBuilder('No', 'No!'),
+                            ])
+                        )
+                    );
                         error_log("XXXXXXXXXXX");
                     }
                 }
