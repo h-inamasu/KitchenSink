@@ -75,9 +75,10 @@ error_log("     postbackData: ".$postbackData);
 if ($dataArray==FALSE) {
 error_log("     dataArray==FALSE");
 }
-error_log("     dataArray: ".strval(count($dataAarray)));
-error_log("     dataArray[0]: ".$dataArrray[0]);
-error_log("     dataArray[1]: ".$dataArrray[1]);
+error_log("     dataArray: ".gettype($dataArray));
+error_log("     dataArray: ".strval(count($dataArray)));
+error_log("     dataArray[0]: ".$dataArray[0]);
+error_log("     dataArray[1]: ".$dataArray[1]);
         }
     }
 }
