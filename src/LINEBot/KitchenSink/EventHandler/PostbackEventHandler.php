@@ -64,6 +64,9 @@ error_log("    row==null");
             return;
         }
         $mode=$row['mode'];
+        if ($mode==null) {
+error_log("      mode==null");
+        }
         if ($mode==2) {
             $postbackData=$this->getPostbackData();
 error_log("     postbackData: ".$postbackData);
