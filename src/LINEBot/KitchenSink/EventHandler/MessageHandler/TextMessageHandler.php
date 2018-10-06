@@ -636,8 +636,8 @@ error_log("      userId: ".$userId);
                         new TemplateMessageBuilder(
                             'Confirm alt text',
                             new ConfirmTemplateBuilder($text, [
-                                new PostbackTemplateActionBuilder('はい','aaa',null),
-                                new PostbackTemplateActionBuilder('いいえ','bbb',null),
+                                new PostbackTemplateActionBuilder('はい','NAMEOK '.$text,null),
+                                new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
                                 //new MessageTemplateActionBuilder('Yes', 'Yes!'),
                                 //new MessageTemplateActionBuilder('No', 'No!'),
                             ])
