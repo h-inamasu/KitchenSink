@@ -621,7 +621,7 @@ error_log("----- Completed");
 error_log("----- default");
                 $userId=$this->textMessage->getUserId();
 error_log("      userId: ".$userId);
-//                $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
+                $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
 //                $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
 //                $stmt->execute();
 //                if ($row=$stmt->fetch()) {
