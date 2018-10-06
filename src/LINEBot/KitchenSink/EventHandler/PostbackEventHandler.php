@@ -51,33 +51,34 @@ class PostbackEventHandler implements EventHandler
 //            $this->postbackEvent->getReplyToken(),
 //            'Got postback ' . $this->postbackEvent->getPostbackData()
 //        );
-error_log("0000000000");
-        $userId=$this->postbackEvent->getUserId();
-error_log("     userId: ".$userId);
-        $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
-        $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
-        $stmt->execute();
-        $row=$stmt->fetch();
-error_log("2222222222");
-        if ($row==null) {
-error_log("    row==null");
-            return;
-        }
-        $mode=$row['mode'];
-        if ($mode==null) {
-error_log("      mode==null");
-        }
-        if ($mode==2) {
-            $postbackData=$this->postbackEvent->getPostbackData();
-error_log("     postbackData: ".$postbackData);
-            $dataArray=explode("\n",$postbackData);
-if ($dataArray==FALSE) {
-error_log("     dataArray==FALSE");
-}
-error_log("     dataArray: ".gettype($dataArray));
-error_log("     dataArray: ".strval(count($dataArray)));
-error_log("     dataArray[0]: ".$dataArray[0]);
-error_log("     dataArray[1]: ".$dataArray[1]);
+error_log("---- PostbackEventHandler");
+//error_log("0000000000");
+//        $userId=$this->postbackEvent->getUserId();
+//error_log("     userId: ".$userId);
+//        $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
+//        $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
+//        $stmt->execute();
+//        $row=$stmt->fetch();
+//error_log("2222222222");
+//        if ($row==null) {
+//error_log("    row==null");
+//            return;
+//        }
+//        $mode=$row['mode'];
+//        if ($mode==null) {
+//error_log("      mode==null");
+//        }
+//        if ($mode==2) {
+//            $postbackData=$this->postbackEvent->getPostbackData();
+//error_log("     postbackData: ".$postbackData);
+//            $dataArray=explode("\n",$postbackData);
+//if ($dataArray==FALSE) {
+//error_log("     dataArray==FALSE");
+//}
+//error_log("     dataArray: ".gettype($dataArray));
+//error_log("     dataArray: ".strval(count($dataArray)));
+//error_log("     dataArray[0]: ".$dataArray[0]);
+//error_log("     dataArray[1]: ".$dataArray[1]);
 //            $stmt=$this->bot->pdo->prepare("UPDATE Users SET mode=:mode,name=:name WHERE userId=:userId");
 //            $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
 //            $stmt->bindParam(':name',$dataArray[1],PDO::PARAM_STR);
@@ -89,6 +90,6 @@ error_log("     dataArray[1]: ".$dataArray[1]);
 //              }
             }
         }
-//error_log("+++++ PostbackEventHandler");
+error_log("+++++ PostbackEventHandler");
     }
 }
