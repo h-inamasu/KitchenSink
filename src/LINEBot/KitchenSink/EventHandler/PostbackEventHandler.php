@@ -68,7 +68,7 @@ error_log("    row==null");
 error_log("      mode==null");
         }
         if ($mode==2) {
-            $postbackData=$this->getPostbackData();
+            $postbackData=$this->postbackEvent->getPostbackData();
 error_log("     postbackData: ".$postbackData);
         }
     }
