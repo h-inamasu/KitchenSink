@@ -626,7 +626,9 @@ error_log("----- default");
                 if ($row=$stmt->fetch()) {
 error_log("      userId: ".$userId);
                     error_log("=====> ".$row['userid']);
-                    error_log("=====> ".$row['userId']);
+                    if ($row['mode']==1) {
+                        error_log("XXXXXXXXXXX");
+                    }
                 }
                 $this->echoBack($replyToken, $text);
 error_log("+++++ default");
