@@ -71,7 +71,8 @@ error_log("      mode==null");
             $postbackData=$this->postbackEvent->getPostbackData();
 error_log("     postbackData: ".$postbackData);
             $dataArray=preg_split('/ /',$postbackData,-1,PREG_SPLIT_NO_EMPTY);
-error_log("     dataArray: ".strval(count($dataArrray)));
+error_log("     dataArray[0]: ".$dataArrray[0]);
+error_log("     dataArray[1]: ".$dataArrray[1]);
         }
     }
 }
