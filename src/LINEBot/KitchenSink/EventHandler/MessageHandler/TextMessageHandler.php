@@ -619,13 +619,13 @@ error_log("----- Completed");
                 break;
             default:
 error_log("----- default");
-//                $userId=$this->textMessage->getUserId();
-//                $stmt=$this->bot->pdo("SELECT * FROM Users WHERE userId=:userId");
-//                $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
-//                $stmt->execute();
-//                if ($row=$stmt->fetch()) {
-//                    error_log("=====> ".$row['userId'];
-//                }
+                $userId=$this->textMessage->getUserId();
+                $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
+                $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
+                $stmt->execute();
+                if ($row=$stmt->fetch()) {
+                    error_log("=====> ".$row['userId'];
+                }
                 $this->echoBack($replyToken, $text);
 error_log("+++++ default");
                 break;
