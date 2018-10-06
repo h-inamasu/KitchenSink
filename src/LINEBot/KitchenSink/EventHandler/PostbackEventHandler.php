@@ -46,9 +46,23 @@ class PostbackEventHandler implements EventHandler
 
     public function handle()
     {
-        $this->bot->replyText(
-            $this->postbackEvent->getReplyToken(),
-            'Got postback ' . $this->postbackEvent->getPostbackData()
-        );
+//        $this->bot->replyText(
+//            $this->postbackEvent->getReplyToken(),
+//            'Got postback ' . $this->postbackEvent->getPostbackData()
+//        );
+        $userId=$this->postbackEvent->getUserId();
+        $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE UserId=:userId");
+        $stmt->bindParam(':userId',$userI,PDO::PARAM_STR);
+        $stmt->execute();
+        $row=$stmt->fetch();
+        if ($row==null) {
+            return;
+        }
+        $mode=$row['mode'];
+        if ($mode==2) {
+        }
+            $postbackData=$this->getPostbackData();
+error_log("     postbackData: ".$postbackData);
+        }
     }
 }
