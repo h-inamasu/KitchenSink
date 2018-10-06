@@ -67,27 +67,26 @@ error_log("    row==null");
         if ($mode==null) {
 error_log("      mode==null");
         }
-//        if ($mode==2) {
-//            $postbackData=$this->postbackEvent->getPostbackData();
-//error_log("     postbackData: ".$postbackData);
-//            $dataArray=explode("\n",$postbackData);
-//if ($dataArray==FALSE) {
-//error_log("     dataArray==FALSE");
-//}
-//error_log("     dataArray: ".gettype($dataArray));
-//error_log("     dataArray: ".strval(count($dataArray)));
-//error_log("     dataArray[0]: ".$dataArray[0]);
-//error_log("     dataArray[1]: ".$dataArray[1]);
+        if ($mode==2) {
+            $postbackData=$this->postbackEvent->getPostbackData();
+error_log("     postbackData: ".$postbackData);
+            $dataArray=explode("\n",$postbackData);
+if ($dataArray==FALSE) {
+error_log("     dataArray==FALSE");
+}
+error_log("     dataArray: ".gettype($dataArray));
+error_log("     dataArray: ".strval(count($dataArray)));
+error_log("     dataArray[0]: ".$dataArray[0]);
+error_log("     dataArray[1]: ".$dataArray[1]);
 //            $stmt=$this->bot->pdo->prepare("UPDATE Users SET mode=:mode,name=:name WHERE userId=:userId");
 //            $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
 //            $stmt->bindParam(':name',$dataArray[1],PDO::PARAM_STR);
 //            $stmt->bindValue(':mode',3,PDO::PARAM_INT);
 //            if ($stmt->execute()==TRUE) {
 //            error_log("OK OK OK OK OK");
-//            else {
+//            } else {
 //            error_log("NG NG NG NG NG");
-//              }
 //            }
-//        }
+        }
     }
 }
