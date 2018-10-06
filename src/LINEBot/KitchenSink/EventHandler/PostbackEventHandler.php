@@ -84,5 +84,6 @@ error_log("     dataArray[1]: ".$dataArray[1]);
             $stmt->bindValue(':mode',3,PDO::PARAM_INT);
             $stmt->execute();
         }
+error_log("+++++ PostbackEventHandler");
     }
 }
