@@ -57,6 +57,7 @@ class PostbackEventHandler implements EventHandler
         $stmt->execute();
         $row=$stmt->fetch();
         if ($row==null) {
+error_log("    row==null");
             return;
         }
         $mode=$row['mode'];
