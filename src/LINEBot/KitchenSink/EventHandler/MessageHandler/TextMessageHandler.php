@@ -625,8 +625,8 @@ error_log("----- default");
                 $stmt->execute();
                 if ($row=$stmt->fetch()) {
 error_log("      userId: ".$userId);
-                    error_log("=====> ".$row['userid'];
-                    error_log("=====> ".$row['userId'];
+                    error_log("=====> ".$row['userid']);
+                    error_log("=====> ".$row['userId']);
                 }
                 $this->echoBack($replyToken, $text);
 error_log("+++++ default");
