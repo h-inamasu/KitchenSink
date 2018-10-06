@@ -18,6 +18,7 @@
 
 namespace LINE\LINEBot\KitchenSink\EventHandler;
 
+use PDO;
 use LINE\LINEBot;
 use LINE\LINEBot\Event\PostbackEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
