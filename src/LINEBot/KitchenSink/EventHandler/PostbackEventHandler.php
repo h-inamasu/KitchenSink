@@ -71,8 +71,8 @@ error_log("      mode==null");
             $postbackData=$this->postbackEvent->getPostbackData();
 error_log("     postbackData: ".$postbackData);
             $dataArray=explode(" ",$postbackData);
-if ($dataArray==null) {
-error_log("     dataArray==null");
+if ($dataArray==FALSE) {
+error_log("     dataArray==FALSE");
 }
 error_log("     dataArray: ".strval(count($dataAarray)));
 error_log("     dataArray[0]: ".$dataArrray[0]);
