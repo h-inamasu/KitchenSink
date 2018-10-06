@@ -70,7 +70,7 @@ error_log("      mode==null");
         if ($mode==2) {
             $postbackData=$this->postbackEvent->getPostbackData();
 error_log("     postbackData: ".$postbackData);
-            $dataArray=explode(' ',$postbackData);
+            $dataArray=explode(" ",$postbackData);
 if ($dataArray==null) {
 error_log("     dataArray==null");
 }
