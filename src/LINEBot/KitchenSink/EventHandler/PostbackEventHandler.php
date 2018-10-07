@@ -56,7 +56,7 @@ error_log("---- PostbackEventHandler");
         error_log("     data: ".$data);
         $commands=explode("\n",$postbackData);
         foreach ($commands as $command) {
-            error_log("     command: ".command);
+            error_log("     command: ".$command);
         }
         return;
         $userId=$this->postbackEvent->getUserId();
