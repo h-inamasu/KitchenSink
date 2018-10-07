@@ -158,7 +158,7 @@ error_log("0000000000");
 
             error_log("----- Upload Richmenu Image");
             //$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
-            $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/richmenu2500_1686.png','image/png');
+            $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/richmenu1200_800.png','image/png');
             $httpStatus=$res->getHTTPStatus();
             $val=strval($httpStatus);
             error_log("      uploadRichMenuImage HTTP ".$val);
