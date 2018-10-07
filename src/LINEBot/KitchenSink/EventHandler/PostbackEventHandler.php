@@ -52,6 +52,9 @@ class PostbackEventHandler implements EventHandler
 //            'Got postback ' . $this->postbackEvent->getPostbackData()
 //        );
 error_log("---- PostbackEventHandler");
+        $data=$this->postbackEvent->getPostbackData();
+        error_log("     data: ".$data);
+        return;
         $userId=$this->postbackEvent->getUserId();
 error_log("     userId: ".$userId);
         $stmt=$this->bot->pdo->prepare("SELECT * FROM Users WHERE userId=:userId");
