@@ -116,12 +116,12 @@ error_log("0000000000");
                         new RichMenuAreaBuilder(
                             new RichMenuAreaBoundsBuilder(0,0,1250,1686),
                         //    new MessageTemplateActionBuilder('お問い合わせ','お問い合わせ')
-                            new PostbackTemplateActionBuilder('お問い合わせ','QANDA')
+                            new PostbackTemplateActionBuilder('お問い合わせ','QANDA',null)
                         ),
                         new RichMenuAreaBuilder(
                             new RichMenuAreaBoundsBuilder(1251,0,1250,1686),
                             //new MessageTemplateActionBuilder('注文','注文')
-                            new PostbackTemplateActionBuilder('注文','ORDER')
+                            new PostbackTemplateActionBuilder('注文','ORDER',null)
                         )
                     ]
                 )
