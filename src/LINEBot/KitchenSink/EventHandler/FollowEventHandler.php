@@ -22,6 +22,7 @@ use LINE\LINEBot;
 use LINE\LINEBot\Event\FollowEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
+use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 use LINE\LINEBot\RichMenuBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
