@@ -20,17 +20,31 @@ namespace LINE\LINEBot\KitchenSink\EventHandler;
 
 use PDO;
 use LINE\LINEBot;
-use LINE\LINEBot\Constant\Flex\ComponentLayout;
-use LINE\LINEBot\Constant\Flex\ComponentFontSize;
-use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
-use LINE\LINEBot\Constant\Flex\ComponentSpacing;
 use LINE\LINEBot\Event\PostbackEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
-use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
+use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+use LINE\LINEBot\Constant\Flex\ComponentLayout;
+use LINE\LINEBot\Constant\Flex\ComponentIconSize;
+use LINE\LINEBot\Constant\Flex\ComponentImageSize;
+use LINE\LINEBot\Constant\Flex\ComponentImageAspectRatio;
+use LINE\LINEBot\Constant\Flex\ComponentImageAspectMode;
+use LINE\LINEBot\Constant\Flex\ComponentFontSize;
+use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
+use LINE\LINEBot\Constant\Flex\ComponentMargin;
+use LINE\LINEBot\Constant\Flex\ComponentSpacing;
+use LINE\LINEBot\Constant\Flex\ComponentButtonStyle;
+use LINE\LINEBot\Constant\Flex\ComponentButtonHeight;
+use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
+use LINE\LINEBot\Constant\Flex\ComponentGravity;
 
 class PostbackEventHandler implements EventHandler
 {
@@ -102,70 +116,6 @@ error_log("---- PostbackEventHandler");
                                                         ->setFlex(0),
                                                     TextComponentBuilder::builder()
                                                         ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
-                                                        ->setWrap(true)
-                                                        ->setWeight(ComponentFontWeight::BOLD)
-                                                        ->setSize(ComponentFontSize::SM)
-                                                        ->setFlex(0)
-                                                ])
-                                        ])
-                                ),
-                            BubbleContainerBuilder::builder()
-                                ->setHeader(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setContents([
-                                            TextComponentBuilder::builder()
-                                                ->setText('よくあるご質問')
-                                        ])
-                                )
-                                ->setBody(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setSpacing(ComponentSpacing::SM)
-                                        ->setContents([
-                                            BoxComponentBuilder::builder()
-                                                ->setLayout(ComponentLayout::VERTICAL)
-                                                ->setContents([
-                                                    TextComponentBuilder::builder()
-                                                        ->setText('支払い方法は?')
-                                                        ->setWrap(true)
-                                                        ->setWeight(ComponentFontWeight::BOLD)
-                                                        ->setSize(ComponentFontSize::XL)
-                                                        ->setFlex(0),
-                                                    TextComponentBuilder::builder()
-                                                        ->setText("灯油早割サービス:クレジットカード払いのみお取り扱いをしております\n大口割引サービス:クレジット払い／現金払いの選択ができます。")
-                                                        ->setWrap(true)
-                                                        ->setWeight(ComponentFontWeight::BOLD)
-                                                        ->setSize(ComponentFontSize::SM)
-                                                        ->setFlex(0)
-                                                ])
-                                        ])
-                                ),
-                            BubbleContainerBuilder::builder()
-                                ->setHeader(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setContents([
-                                            TextComponentBuilder::builder()
-                                                ->setText('よくあるご質問')
-                                        ])
-                                )
-                                ->setBody(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setSpacing(ComponentSpacing::SM)
-                                        ->setContents([
-                                            BoxComponentBuilder::builder()
-                                                ->setLayout(ComponentLayout::VERTICAL)
-                                                ->setContents([
-                                                    TextComponentBuilder::builder()
-                                                        ->setText('ネットの注文方法は?')
-                                                        ->setWrap(true)
-                                                        ->setWeight(ComponentFontWeight::BOLD)
-                                                        ->setSize(ComponentFontSize::XL)
-                                                        ->setFlex(0),
-                                                    TextComponentBuilder::builder()
-                                                        ->setText('トップページより新規会員登録をして頂き、ログイン後に表示される、注文画面よりご注文ください。')
                                                         ->setWrap(true)
                                                         ->setWeight(ComponentFontWeight::BOLD)
                                                         ->setSize(ComponentFontSize::SM)
