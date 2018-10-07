@@ -54,6 +54,10 @@ class PostbackEventHandler implements EventHandler
 error_log("---- PostbackEventHandler");
         $data=$this->postbackEvent->getPostbackData();
         error_log("     data: ".$data);
+        $commands=explode("\n",$postbackData);
+        foreach ($commands as $command) {
+            error_log("     command: ".command);
+        }
         return;
         $userId=$this->postbackEvent->getUserId();
 error_log("     userId: ".$userId);
