@@ -80,7 +80,6 @@ error_log("0000000000");
         $message3="まずはお名前をご入力ください。";
         $this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
 
-        if (FALSE) {
         error_log("----- Richmenu");
         $richMenuName='Rich Menu Name';
         $richMenuFound=FALSE;
@@ -158,7 +157,8 @@ error_log("0000000000");
             error_log("     richMenuId=".$richMenuId);
 
             error_log("----- Upload Richmenu Image");
-            $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
+            //$res=$this->bot->uploadRichMenuImage($richMenuId,'/app/rich_menu.png','image/png');
+            $res=$this->bot->uploadRichMenuImage($richMenuId,'/app/richmenu2500_1686.png','image/png');
             $httpStatus=$res->getHTTPStatus();
             $val=strval($httpStatus);
             error_log("      uploadRichMenuImage HTTP ".$val);
@@ -176,7 +176,6 @@ error_log("0000000000");
         $httpStatus=$res->getHTTPStatus();
         $val=strval($httpStatus);
         error_log("      linkRichMenu HTTP ".$val);
-        }
 
         error_log("----- Completed");
     }
