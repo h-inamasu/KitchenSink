@@ -20,8 +20,17 @@ namespace LINE\LINEBot\KitchenSink\EventHandler;
 
 use PDO;
 use LINE\LINEBot;
+use LINE\LINEBot\Constant\Flex\ComponentLayout;
+use LINE\LINEBot\Constant\Flex\ComponentFontSize;
+use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
+use LINE\LINEBot\Constant\Flex\ComponentSpacing;
 use LINE\LINEBot\Event\PostbackEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
+use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
 
 class PostbackEventHandler implements EventHandler
 {
