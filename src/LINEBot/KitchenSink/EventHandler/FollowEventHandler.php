@@ -71,7 +71,6 @@ class FollowEventHandler implements EventHandler
         $userId=$this->followEvent->getUserId();
         $stmt=$pdo->query("INSERT INTO Users (userid,mode) VALUES ('$userId',1)");
         $stmt=$pdo->query("INSERT INTO Users (userid,mode) VALUES ('0000000000',10)");
-error_log("0000000000");
 
         $message1="友達登録ありがとう御座います！\n".
                   "これからお得な情報を配信していきますので、ご期待ください！\n".
@@ -79,6 +78,7 @@ error_log("0000000000");
         $message2="まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
         $message3="まずはお名前をご入力ください。";
         $this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
+error_log("0000000000");
 
         error_log("----- Richmenu");
         $richMenuName='Rich Menu Name';
