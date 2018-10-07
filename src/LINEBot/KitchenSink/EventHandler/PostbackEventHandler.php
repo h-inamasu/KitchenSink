@@ -71,7 +71,7 @@ error_log("---- PostbackEventHandler");
         switch ($commands[0]):
         case 'QANDA':
         $res=$this->bot->replyMessage(
-            $replyToken,
+            $this->postbackEvent->getReplyToken(),
             FlexMessageBuilder::builder()
                 ->setAltText('問合せ')
                 ->setContents(
