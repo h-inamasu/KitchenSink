@@ -84,64 +84,33 @@ class FlexMessageQA
 
     private static function createBodyBlock()
     {
-        $title=TextComponentBuilder::builder()
-            ->setText('Brown Cafe')
-            ->setWeight(ComponentFontWeight::BOLD)
-            ->setSize(ComponentFontSize::XL);
-
-        $place=BoxComponentBuilder::builder()
-            ->setLayout(ComponentLayout::BASELINE)
-            ->setSpacing(ComponentSpacing::SM)
-            ->setContents([
-                TextComponentBuilder::builder()
-                    ->setText('Place')
-                    ->setColor('#aaaaaa')
-                    ->setSize(ComponentFontSize::SM)
-                    ->setFlex(1),
-                TextComponentBuilder::builder()
-                    ->setText('Miraina Tower, 4-1-6 Shinjuku, Tokyo')
-                    ->setWrap(true)
-                    ->setColor('#666666')
-                    ->setSize(ComponentFontSize::SM)
-                    ->setFlex(5)
-            ]);
-        $time = BoxComponentBuilder::builder()
-            ->setLayout(ComponentLayout::BASELINE)
-            ->setSpacing(ComponentSpacing::SM)
-            ->setContents([
-                TextComponentBuilder::builder()
-                    ->setText('Time')
-                    ->setColor('#aaaaaa')
-                    ->setSize(ComponentFontSize::SM)
-                    ->setFlex(1),
-                TextComponentBuilder::builder()
-                    ->setText('10:00 - 23:00')
-                    ->setWrap(true)
-                    ->setColor('#666666')
-                    ->setSize(ComponentFontSize::SM)
-                    ->setFlex(5)
-            ]);
 error_log("99999999999");
         $question1=TextComponentBuilder::builder()
             ->setText('お問い合わせ 1')
-            ->setSize(ComponentFontSize::SM)
+            ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER1'));
         $question2=TextComponentBuilder::builder()
             ->setText('お問い合わせ 2')
             ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER2'));
+        $question1=TextComponentBuilder::builder()
+            ->setText('お問い合わせ 3')
+            ->setSize(ComponentFontSize::LG)
+            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER3'));
+        $question1=TextComponentBuilder::builder()
+            ->setText('お問い合わせ 4')
+            ->setSize(ComponentFontSize::LG)
+            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER4'));
+        $question1=TextComponentBuilder::builder()
+            ->setText('お問い合わせ 5')
+            ->setSize(ComponentFontSize::LG)
+            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER5'));
 
-        $info = BoxComponentBuilder::builder()
-            ->setLayout(ComponentLayout::VERTICAL)
-            ->setMargin(ComponentMargin::LG)
-            ->setSpacing(ComponentSpacing::SM)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QAITEM1'))
-            ->setContents([$place, $time]);
 error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$title,$info,$question1,$question2]);
+            ->setContents([$question1,$question2,$question3,$question4,$question5]);
     }
 
     private static function createFooterBlock()
