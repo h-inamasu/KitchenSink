@@ -50,7 +50,7 @@ class FlexMessageQA
     public static function get()
     {
         return FlexMessageBuilder::builder()
-            ->setAltText('Restaurant')
+            ->setAltText('お問い合わせ')
             ->setContents(
                 BubbleContainerBuilder::builder()
                     ->setHeader(self::createHeaderBlock())
@@ -82,31 +82,15 @@ class FlexMessageQA
 
     private static function createBodyBlock()
     {
-        $title = TextComponentBuilder::builder()
+        $title=TextComponentBuilder::builder()
             ->setText('Brown Cafe')
             ->setWeight(ComponentFontWeight::BOLD)
             ->setSize(ComponentFontSize::XL);
 
-        $goldStar = IconComponentBuilder::builder()
-            ->setUrl('https://example.com/gold_star.png')
-            ->setSize(ComponentIconSize::SM);
-        $grayStar = IconComponentBuilder::builder()
-            ->setUrl('https://example.com/gray_star.png')
-            ->setSize(ComponentIconSize::SM);
-        $point = TextComponentBuilder::builder()
-            ->setText('4.0')
-            ->setSize(ComponentFontSize::SM)
-            ->setColor('#999999')
-            ->setMargin(ComponentMargin::MD)
-            ->setFlex(0);
-        $review = BoxComponentBuilder::builder()
-            ->setLayout(ComponentLayout::BASELINE)
-            ->setMargin(ComponentMargin::MD)
-            ->setContents([$goldStar, $goldStar, $goldStar, $goldStar, $grayStar, $point]);
-
-        $place = BoxComponentBuilder::builder()
+        $place=BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::BASELINE)
             ->setSpacing(ComponentSpacing::SM)
+            ->setAction(PostbackTemplateActionBuilder('','QAMENU1'))
             ->setContents([
                 TextComponentBuilder::builder()
                     ->setText('Place')
