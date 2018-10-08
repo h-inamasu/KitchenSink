@@ -84,33 +84,30 @@ class FlexMessageQA
 
     private static function createBodyBlock()
     {
-error_log("99999999999");
         $category1=TextComponentBuilder::builder()
             ->setText('カテゴリー 1')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION1'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY1'));
         $category2=TextComponentBuilder::builder()
             ->setText('カテゴリー 2')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION2'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY2'));
         $category3=TextComponentBuilder::builder()
             ->setText('カテゴリー 3')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION3'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY3'));
         $category4=TextComponentBuilder::builder()
             ->setText('カテゴリー 4')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION4'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY4'));
         $category5=TextComponentBuilder::builder()
             ->setText('カテゴリー 5')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION5'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY5'));
         $category6=TextComponentBuilder::builder()
             ->setText('カテゴリー 6')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION6'));
-
-error_log("AAAAAAAAAA");
+            ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY6'));
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
