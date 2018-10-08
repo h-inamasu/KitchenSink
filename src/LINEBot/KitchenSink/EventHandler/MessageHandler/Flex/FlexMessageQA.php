@@ -53,10 +53,20 @@ class FlexMessageQA
             ->setAltText('Restaurant')
             ->setContents(
                 BubbleContainerBuilder::builder()
-                    ->setHero(self::createHeroBlock())
+                    //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
                     ->setFooter(self::createFooterBlock())
             );
+    }
+
+    private static function createHeaderBlock()
+    {
+        return BoxComponentBuilder::builder()
+            ->setLayout(ComponentLayout::VERTICAL)
+            ->setContents([
+                TextComponentBuilder::builder()
+                    ->setText('質問を選択してください。')
+            ])
     }
 
     private static function createHeroBlock()
