@@ -4,10 +4,9 @@ $url=parse_url(getenv('DATABASE_URL'));
 
 $str="name1=value1&name2=value2&name3=value3\nvalue4";
 parse_str($str,$array);
-var_dump($array);
-print("name1: ".$array["name1"]."\n");
-print("name2: ".$array["name2"]."\n");
-print("name3: ".$array["name3"]."\n");
+error_log("name1: ".$array["name1"]);
+error_log("name2: ".$array["name2"]);
+error_log("name3: ".$array["name3"]);
 
 $host=$url['host'];
 $dbname=substr($url['path'],1);
