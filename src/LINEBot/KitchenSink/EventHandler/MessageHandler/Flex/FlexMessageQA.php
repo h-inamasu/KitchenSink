@@ -53,6 +53,7 @@ class FlexMessageQA
             ->setAltText('Restaurant')
             ->setContents(
                 BubbleContainerBuilder::builder()
+                    ->setHeader(self::createHeaderBlock())
                     //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
                     ->setFooter(self::createFooterBlock())
