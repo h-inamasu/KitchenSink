@@ -71,7 +71,7 @@ class FlexMessageQA
     {
         return BubbleStylesBuilder::builder()
             ->setHeader(BlockStyleBuilder::builder()
-                ->setBackgroundColor('#000000')
+                ->setSeparatorColor('#000000')
                 ->setSeparator(true))
             ->setHero(null)
             ->setBody(null)
