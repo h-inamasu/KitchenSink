@@ -65,6 +65,7 @@ class FlexMessageQA
 
     private static function createHeaderBlock()
     {
+error_out("      ".ComponentAlign::CENTER);
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
             ->setContents([
@@ -72,7 +73,7 @@ class FlexMessageQA
                     ->setGravity(ComponentGravity::CENTER)
                     ->setAlign(ComponentAlign::CENTER)
                     ->setWeight(ComponentFontWeight::BOLD)
-                    ->setText('カテゴリーを選択してください。')
+                    ->setText('カテゴリーを選択してください')
             ]);
     }
 
