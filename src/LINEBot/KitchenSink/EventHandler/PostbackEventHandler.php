@@ -74,7 +74,7 @@ error_log("3333333333");
 error_log("4444444444");
             $flexMessageBuilder=FlexMessageAnswer::get();
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
-error_log("55555555555");
+error_log("555555555555");
             break;
         }
 error_log("+++++ PostbackEventHandler");
