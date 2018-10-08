@@ -66,15 +66,15 @@ class FlexMessageQA
             );
     }
 
-//    private static function createStyle()
-//    {
-//        return BubbleStylesBuilder::builder()
-//            ->setHeader(BlockStyleBuilder::builder()
-//                ->setSeparator(true));
-//            ->setHero(null)
-//            ->setBody(null)
-//            ->setFooter(null);
-//    }
+    private static function createStyle()
+    {
+        return BubbleStylesBuilder::builder()
+            ->setHeader(BlockStyleBuilder::builder()
+                ->setSeparator(true))
+            ->setHero(null)
+            ->setBody(null)
+            ->setFooter(null);
+    }
 
     private static function createHeaderBlock()
     {
