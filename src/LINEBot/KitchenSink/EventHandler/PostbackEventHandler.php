@@ -24,6 +24,7 @@ use LINE\LINEBot\Event\PostbackEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
 
 use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexMessageQA;
+use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexMessageQuestion;
 
 class PostbackEventHandler implements EventHandler
 {
@@ -61,6 +62,14 @@ error_log("----- PostbackEventHandler");
 error_log("xxxxx PostbackEventHandler");
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
             break;
+        case 'CATEGORY1':
+            $flexMessageBuilder=FlexMessageQuestion::get();
+            $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
+            break;
+        //case 'QUESTION1':
+        //    $flexMessageBuilder=FlexMessageAnswer::get();
+        //    $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
+        //    break;
         }
 error_log("+++++ PostbackEventHandler");
         return;
