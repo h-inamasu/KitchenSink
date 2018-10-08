@@ -137,7 +137,7 @@ error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$title,$info]);
+            ->setContents([$title,$info,$temp]);
     }
 
     private static function createFooterBlock()
