@@ -23,7 +23,7 @@ use LINE\LINEBot;
 use LINE\LINEBot\Event\PostbackEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
 
-use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexSampleRestaurant;
+use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexMessageQA;
 
 class PostbackEventHandler implements EventHandler
 {
@@ -57,7 +57,7 @@ error_log("----- PostbackEventHandler");
         $data=$this->postbackEvent->getPostbackData();
         switch ($data) {
         case 'QANDA':
-            $flexMessageBuilder=FlexSampleRestaurant::get();
+            $flexMessageBuilder=FlexMessageQA::get();
 error_log("xxxxx PostbackEventHandler");
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
             break;
