@@ -59,6 +59,7 @@ class FlexMessageQA
             ->setAltText('お問い合わせ')
             ->setContents(
                 BubbleContainerBuilder::builder()
+                    ->setStyles(self::createStyle())
                     ->setHeader(self::createHeaderBlock())
                     //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
