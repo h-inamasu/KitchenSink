@@ -114,7 +114,7 @@ error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$question1,$question2,$question3,$question4,$question5,$question6]);
+            ->setContents([$category1,$category2,$category3,$category4,$category5,$category6]);
     }
 
     private static function createFooterBlock()
