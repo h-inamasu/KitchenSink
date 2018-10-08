@@ -69,10 +69,12 @@ error_log("22222222222");
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
 error_log("3333333333");
             break;
-        //case 'QUESTION1':
-        //    $flexMessageBuilder=FlexMessageAnswer::get();
-        //    $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
-        //    break;
+        case 'QUESTION1':
+error_log("4444444444");
+            $flexMessageBuilder=FlexMessageAnswer::get();
+            $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
+error_log("55555555555");
+            break;
         }
 error_log("+++++ PostbackEventHandler");
         return;
