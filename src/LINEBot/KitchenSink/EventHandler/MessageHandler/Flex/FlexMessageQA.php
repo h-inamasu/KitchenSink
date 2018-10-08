@@ -69,19 +69,13 @@ class FlexMessageQA
 
     private static function createStyle()
     {
-//        return BubbleStylesBuilder::builder()
-//            ->setHeader(BlockStyleBuilder::builder()
-//                ->setSeparator(true))
-//            ->setHero(null)
-//            ->setBody(null)
-//            ->setFooter(null);
-        $builder=new BubbleStylesBuilder(
-            new BlockStyleBuilder(null,true,'#000000'),
-            null,
-            null,
-            null
-        );
-        return $builder;
+        return BubbleStylesBuilder::builder()
+            ->setHeader(BlockStyleBuilder::builder()
+                ->setBackgroundColor('#000000')
+                ->setSeparator(true))
+            ->setHero(null)
+            ->setBody(null)
+            ->setFooter(null);
     }
 
     private static function createHeaderBlock()
