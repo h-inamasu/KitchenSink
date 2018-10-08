@@ -55,6 +55,7 @@ class PostbackEventHandler implements EventHandler
 //        );
 error_log("----- PostbackEventHandler");
             $flexMessageBuilder=FlexSampleRestaurant::get();
+error_log("xxxxx PostbackEventHandler");
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
             break;
         }
