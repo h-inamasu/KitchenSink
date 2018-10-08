@@ -126,7 +126,7 @@ error_log("99999999999");
             ->setLayout(ComponentLayout::VERTICAL)
             ->setMargin(ComponentMargin::LG)
             ->setSpacing(ComponentSpacing::SM)
-            ->setAction(null)
+            ->setAction(new PostbackTemplateActionBuilder(null,'QAITEM1'))
             ->setContents([$place, $time]);
 error_log("AAAAAAAAAA");
 
