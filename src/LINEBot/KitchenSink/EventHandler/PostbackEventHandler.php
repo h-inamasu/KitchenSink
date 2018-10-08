@@ -25,6 +25,7 @@ use LINE\LINEBot\KitchenSink\EventHandler;
 
 use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexMessageQA;
 use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexMessageQuestion;
+use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexMessageAnswer;
 
 class PostbackEventHandler implements EventHandler
 {
