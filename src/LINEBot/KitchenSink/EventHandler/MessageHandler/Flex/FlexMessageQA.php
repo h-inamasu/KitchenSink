@@ -87,26 +87,32 @@ class FlexMessageQA
         $category1=TextComponentBuilder::builder()
             ->setText('カテゴリー 1')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin:MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY1'));
         $category2=TextComponentBuilder::builder()
             ->setText('カテゴリー 2')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin:MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY2'));
         $category3=TextComponentBuilder::builder()
             ->setText('カテゴリー 3')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin:MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY3'));
         $category4=TextComponentBuilder::builder()
             ->setText('カテゴリー 4')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin:MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY4'));
         $category5=TextComponentBuilder::builder()
             ->setText('カテゴリー 5')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin:MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY5'));
         $category6=TextComponentBuilder::builder()
             ->setText('カテゴリー 6')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin:MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY6'));
 
         return BoxComponentBuilder::builder()
