@@ -23,28 +23,7 @@ use LINE\LINEBot;
 use LINE\LINEBot\Event\PostbackEvent;
 use LINE\LINEBot\KitchenSink\EventHandler;
 
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
-use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
-use LINE\LINEBot\Constant\Flex\ComponentLayout;
-use LINE\LINEBot\Constant\Flex\ComponentIconSize;
-use LINE\LINEBot\Constant\Flex\ComponentImageSize;
-use LINE\LINEBot\Constant\Flex\ComponentImageAspectRatio;
-use LINE\LINEBot\Constant\Flex\ComponentImageAspectMode;
-use LINE\LINEBot\Constant\Flex\ComponentFontSize;
-use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
-use LINE\LINEBot\Constant\Flex\ComponentMargin;
-use LINE\LINEBot\Constant\Flex\ComponentSpacing;
-use LINE\LINEBot\Constant\Flex\ComponentButtonStyle;
-use LINE\LINEBot\Constant\Flex\ComponentButtonHeight;
-use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
-use LINE\LINEBot\Constant\Flex\ComponentGravity;
+use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexSampleRestaurant;
 
 class PostbackEventHandler implements EventHandler
 {
@@ -74,60 +53,12 @@ class PostbackEventHandler implements EventHandler
 //            $this->postbackEvent->getReplyToken(),
 //            'Got postback ' . $this->postbackEvent->getPostbackData()
 //        );
-error_log("---- PostbackEventHandler");
-        $data=$this->postbackEvent->getPostbackData();
-        error_log("     data: ".$data);
-        $commands=explode("\n",$data);
-        foreach ($commands as $command) {
-            error_log("     command: ".$command);
-        }
-
-        switch ($commands[0]):
-        case 'QANDA':
-        $res=$this->bot->replyMessage(
-            $this->postbackEvent->getReplyToken(),
-            FlexMessageBuilder::builder()
-                ->setAltText('問合せ')
-                ->setContents(
-                    CarouselContainerBuilder::builder()
-                        ->setContents([
-                            BubbleContainerBuilder::builder()
-                                ->setHeader(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setContents([
-                                            TextComponentBuilder::builder()
-                                                ->setText('よくあるご質問')
-                                        ])
-                                )
-                                ->setBody(
-                                    BoxComponentBuilder::builder()
-                                        ->setLayout(ComponentLayout::VERTICAL)
-                                        ->setSpacing(ComponentSpacing::SM)
-                                        ->setContents([
-                                            BoxComponentBuilder::builder()
-                                                ->setLayout(ComponentLayout::VERTICAL)
-                                                ->setContents([
-                                                    TextComponentBuilder::builder()
-                                                        ->setText('販売方法は?')
-                                                        ->setWrap(true)
-                                                        ->setWeight(ComponentFontWeight::BOLD)
-                                                        ->setSize(ComponentFontSize::XL)
-                                                        ->setFlex(0),
-                                                    TextComponentBuilder::builder()
-                                                        ->setText('シューワでは、灯油は基本的に特定の曜日の決められたコースを巡回する巡回販売にて販売しております。')
-                                                        ->setWrap(true)
-                                                        ->setWeight(ComponentFontWeight::BOLD)
-                                                        ->setSize(ComponentFontSize::SM)
-                                                        ->setFlex(0)
-                                                ])
-                                        ])
-                                ),
-                        ])
-                )
-        );
+error_log("----- PostbackEventHandler");
+            $flexMessageBuilder=FlexSampleRestaurant::get();
+            $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
             break;
         }
+error_log("+++++ PostbackEventHandler");
         return;
         $userId=$this->postbackEvent->getUserId();
 error_log("     userId: ".$userId);
