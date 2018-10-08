@@ -122,10 +122,14 @@ class FlexMessageQA
                     ->setFlex(5)
             ]);
 error_log("99999999999");
-        $temp=TextComponentBuilder::builder()
-            ->setText('temp')
+        $question1=TextComponentBuilder::builder()
+            ->setText('お問い合わせ 1')
             ->setSize(ComponentFontSize::SM)
-            ->setAction(new PostbackTemplateActionBuilder(null,'TEMP'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER1'));
+        $question2=TextComponentBuilder::builder()
+            ->setText('お問い合わせ 2')
+            ->setSize(ComponentFontSize::LG)
+            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER2'));
 
         $info = BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
@@ -137,7 +141,7 @@ error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$title,$info,$temp]);
+            ->setContents([$title,$info,$question1,$question2]);
     }
 
     private static function createFooterBlock()
