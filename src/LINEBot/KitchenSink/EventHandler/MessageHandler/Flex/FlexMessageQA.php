@@ -68,7 +68,7 @@ class FlexMessageQA
             ->setLayout(ComponentLayout::VERTICAL)
             ->setContents([
                 TextComponentBuilder::builder()
-                    ->setText('質問を選択してください。')
+                    ->setText('カテゴリーを選択してください。')
             ]);
     }
 
@@ -85,32 +85,36 @@ class FlexMessageQA
     private static function createBodyBlock()
     {
 error_log("99999999999");
-        $question1=TextComponentBuilder::builder()
-            ->setText('お問い合わせ 1')
+        $category1=TextComponentBuilder::builder()
+            ->setText('カテゴリー 1')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER1'));
-        $question2=TextComponentBuilder::builder()
-            ->setText('お問い合わせ 2')
+            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION1'));
+        $category2=TextComponentBuilder::builder()
+            ->setText('カテゴリー 2')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER2'));
-        $question3=TextComponentBuilder::builder()
-            ->setText('お問い合わせ 3')
+            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION2'));
+        $category3=TextComponentBuilder::builder()
+            ->setText('カテゴリー 3')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER3'));
-        $question4=TextComponentBuilder::builder()
-            ->setText('お問い合わせ 4')
+            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION3'));
+        $category4=TextComponentBuilder::builder()
+            ->setText('カテゴリー 4')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER4'));
-        $question5=TextComponentBuilder::builder()
-            ->setText('お問い合わせ 5')
+            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION4'));
+        $category5=TextComponentBuilder::builder()
+            ->setText('カテゴリー 5')
             ->setSize(ComponentFontSize::LG)
-            ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER5'));
+            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION5'));
+        $category6=TextComponentBuilder::builder()
+            ->setText('カテゴリー 6')
+            ->setSize(ComponentFontSize::LG)
+            ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION6'));
 
 error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$question1,$question2,$question3,$question4,$question5]);
+            ->setContents([$question1,$question2,$question3,$question4,$question5,$question6]);
     }
 
     private static function createFooterBlock()
