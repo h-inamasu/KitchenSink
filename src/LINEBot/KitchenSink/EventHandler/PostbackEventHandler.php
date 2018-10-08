@@ -64,8 +64,10 @@ error_log("xxxxx PostbackEventHandler");
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
             break;
         case 'CATEGORY1':
+error_log("22222222222");
             $flexMessageBuilder=FlexMessageQuestion::get();
             $this->bot->replyMessage($this->postbackEvent->getReplyToken(),$flexMessageBuilder);
+error_log("3333333333");
             break;
         //case 'QUESTION1':
         //    $flexMessageBuilder=FlexMessageAnswer::get();
