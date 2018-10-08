@@ -93,15 +93,15 @@ error_log("99999999999");
             ->setText('お問い合わせ 2')
             ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER2'));
-        $question1=TextComponentBuilder::builder()
+        $question3=TextComponentBuilder::builder()
             ->setText('お問い合わせ 3')
             ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER3'));
-        $question1=TextComponentBuilder::builder()
+        $question4=TextComponentBuilder::builder()
             ->setText('お問い合わせ 4')
             ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER4'));
-        $question1=TextComponentBuilder::builder()
+        $question5=TextComponentBuilder::builder()
             ->setText('お問い合わせ 5')
             ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'ANSWER5'));
