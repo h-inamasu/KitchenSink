@@ -70,7 +70,7 @@ class FlexMessageQA
             ->setContents([
                 TextComponentBuilder::builder()
                     ->setGravity(ComponentGravity::CENTER)
-                    ->setAlign('center'/*ComponentAlign::CENTER*/)
+                    //->setAlign(ComponentAlign::CENTER)
                     ->setWeight(ComponentFontWeight::BOLD)
                     ->setText('カテゴリーを選択してください')
             ]);
