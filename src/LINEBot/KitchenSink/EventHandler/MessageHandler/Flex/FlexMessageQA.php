@@ -92,7 +92,6 @@ class FlexMessageQA
         $place=BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::BASELINE)
             ->setSpacing(ComponentSpacing::SM)
-            ->setAction(new PostbackTemplateActionBuilder('','QAMENU1'))
             ->setContents([
                 TextComponentBuilder::builder()
                     ->setText('Place')
@@ -122,11 +121,14 @@ class FlexMessageQA
                     ->setSize(ComponentFontSize::SM)
                     ->setFlex(5)
             ]);
+error_log("99999999999");
         $info = BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
             ->setMargin(ComponentMargin::LG)
             ->setSpacing(ComponentSpacing::SM)
+            ->setAction(new PostbackTemplateActionBuilder('','QAMENU1'))
             ->setContents([$place, $time]);
+error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
