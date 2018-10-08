@@ -68,6 +68,7 @@ class FlexMessageQA
             ->setLayout(ComponentLayout::VERTICAL)
             ->setContents([
                 TextComponentBuilder::builder()
+                    ->setWeight(ComponentFontWeight::BOLD)
                     ->setText('カテゴリーを選択してください。')
             ]);
     }
