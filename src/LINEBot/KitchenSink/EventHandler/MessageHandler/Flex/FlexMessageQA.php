@@ -126,7 +126,7 @@ error_log("99999999999");
             ->setLayout(ComponentLayout::VERTICAL)
             ->setMargin(ComponentMargin::LG)
             ->setSpacing(ComponentSpacing::SM)
-            ->setAction(new PostbackTemplateActionBuilder('','QAMENU1'))
+            ->setAction(null)
             ->setContents([$place, $time]);
 error_log("AAAAAAAAAA");
 
