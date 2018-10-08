@@ -66,7 +66,7 @@ class FlexMessageQA
             ->setContents([
                 TextComponentBuilder::builder()
                     ->setText('質問を選択してください。')
-            ])
+            ]);
     }
 
     private static function createHeroBlock()
