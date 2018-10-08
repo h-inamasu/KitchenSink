@@ -42,7 +42,7 @@ use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
 
 use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 
-class FlexMessageQestion
+class FlexMessageQuestion
 {
     /**
      * Create sample restaurant flex message
