@@ -2,7 +2,7 @@
 
 $url=parse_url(getenv('DATABASE_URL'));
 
-$str="name1=value1&name2=value2&name3=value3 value4";
+$str="name1=value1&name2=value2&name3=value3\nvalue4";
 parse_str($str,$array);
 var_dump($array);
 
