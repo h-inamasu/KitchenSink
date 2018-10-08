@@ -125,7 +125,7 @@ error_log("99999999999");
         $temp=TextComponentBuilder::builder()
             ->setText('temp')
             ->setSize(ComponentFontSize::SM)
-            ->setAction(new PostbackTemplateActionBuilder(null,'TEMP')) 
+            ->setAction(new PostbackTemplateActionBuilder(null,'TEMP'));
 
         $info = BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
