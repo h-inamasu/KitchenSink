@@ -122,6 +122,11 @@ class FlexMessageQA
                     ->setFlex(5)
             ]);
 error_log("99999999999");
+        $temp=TextComponentBuilder::builder()
+            ->setText('temp')
+            ->setSize(ComponentFontSize::SM)
+            ->setAction(new PostbackTemplateActionBuilder(null,'TEMP')) 
+
         $info = BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
             ->setMargin(ComponentMargin::LG)
@@ -132,7 +137,7 @@ error_log("AAAAAAAAAA");
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$title,$info]);
+            ->setContents([$title,$info,$temp]);
     }
 
     private static function createFooterBlock()
