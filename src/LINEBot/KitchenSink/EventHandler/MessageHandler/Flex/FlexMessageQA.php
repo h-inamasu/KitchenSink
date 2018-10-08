@@ -34,6 +34,8 @@ use LINE\LINEBot\Constant\Flex\ComponentSpacing;
 use LINE\LINEBot\Constant\Flex\ComponentGravity;
 use LINE\LINEBot\Constant\Flex\ComponentAlign;
 use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\BlockStyleBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\BubbleStylesBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
@@ -62,6 +64,16 @@ class FlexMessageQA
                     ->setBody(self::createBodyBlock())
                     //->setFooter(self::createFooterBlock())
             );
+    }
+
+    private static function createStyle()
+    {
+        return BubbleStylesBuilder::builder()
+            ->setHeader(BlockStyleBuilder::builder()
+                ->setSeparator(true));
+            ->setHero(null)
+            ->setBody(null)
+            ->setFooter(null);
     }
 
     private static function createHeaderBlock()
