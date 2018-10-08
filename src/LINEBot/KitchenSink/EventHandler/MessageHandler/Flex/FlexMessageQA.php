@@ -31,7 +31,6 @@ use LINE\LINEBot\Constant\Flex\ComponentLayout;
 use LINE\LINEBot\Constant\Flex\ComponentMargin;
 use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
 use LINE\LINEBot\Constant\Flex\ComponentSpacing;
-//use LINE\LINEBot\Constant\Flex\ComponentAlign;
 use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
@@ -70,7 +69,6 @@ class FlexMessageQA
             ->setContents([
                 TextComponentBuilder::builder()
                     ->setGravity(ComponentGravity::CENTER)
-                    //->setAlign(ComponentAlign::CENTER)
                     ->setWeight(ComponentFontWeight::BOLD)
                     ->setText('カテゴリーを選択してください')
             ]);
