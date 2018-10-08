@@ -87,26 +87,32 @@ class FlexMessageQuestion
         $question1=TextComponentBuilder::builder()
             ->setText('質問 1')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION1'));
         $question2=TextComponentBuilder::builder()
             ->setText('質問 2')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION2'));
         $question3=TextComponentBuilder::builder()
             ->setText('質問 3')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION3'));
         $question4=TextComponentBuilder::builder()
             ->setText('質問 4')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION4'));
         $question5=TextComponentBuilder::builder()
             ->setText('質問 5')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION5'));
         $question6=TextComponentBuilder::builder()
             ->setText('質問 6')
             ->setSize(ComponentFontSize::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION6'));
 
         return BoxComponentBuilder::builder()
