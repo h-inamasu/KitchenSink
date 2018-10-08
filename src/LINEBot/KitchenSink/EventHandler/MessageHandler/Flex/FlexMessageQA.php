@@ -130,7 +130,7 @@ class FlexMessageQA
 
         return BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::VERTICAL)
-            ->setContents([$title, $review, $info]);
+            ->setContents([$title,$info]);
     }
 
     private static function createFooterBlock()
