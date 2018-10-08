@@ -56,6 +56,7 @@ class PostbackEventHandler implements EventHandler
 //        );
 error_log("----- PostbackEventHandler");
         $data=$this->postbackEvent->getPostbackData();
+error_log("      data: ".$data);
         switch ($data) {
         case 'QANDA':
             $flexMessageBuilder=FlexMessageQA::get();
