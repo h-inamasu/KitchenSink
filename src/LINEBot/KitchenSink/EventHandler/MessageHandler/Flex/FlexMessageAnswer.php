@@ -80,7 +80,7 @@ class FlexMessageAnswer
     private static function createBodyBlock()
     {
         $answer=TextComponentBuilder::builder()
-            ->setText("回答 1\\n質問1に対する回答です。")
+            ->setText("回答 1"."\n"."質問1に対する回答です。")
             ->setSize(ComponentFontSize::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'QUESTION1'));
 
