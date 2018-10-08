@@ -92,7 +92,7 @@ class FlexMessageQA
         $place=BoxComponentBuilder::builder()
             ->setLayout(ComponentLayout::BASELINE)
             ->setSpacing(ComponentSpacing::SM)
-            ->setAction(PostbackTemplateActionBuilder('','QAMENU1'))
+            ->setAction(new PostbackTemplateActionBuilder('','QAMENU1'))
             ->setContents([
                 TextComponentBuilder::builder()
                     ->setText('Place')
