@@ -2,6 +2,10 @@
 
 $url=parse_url(getenv('DATABASE_URL'));
 
+$str="name1=value1&name2=value2&name3=value3";
+parse_str($str,$array);
+var_dump($array);
+
 $host=$url['host'];
 $dbname=substr($url['path'],1);
 $user=$url['user'];
@@ -19,7 +23,7 @@ try {
     $sql="select * from pg_user;";
     $stmt=$pdo->query($sql);
     $users=$stmt->fetchAll();
-    print_r($users);
+//    print_r($users);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
