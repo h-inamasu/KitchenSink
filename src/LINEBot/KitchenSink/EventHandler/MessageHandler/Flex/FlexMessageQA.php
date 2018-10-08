@@ -58,7 +58,7 @@ class FlexMessageQA
                     ->setHeader(self::createHeaderBlock())
                     //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
-                    ->setFooter(self::createFooterBlock())
+                    //->setFooter(self::createFooterBlock())
             );
     }
 
@@ -115,20 +115,6 @@ error_log("AAAAAAAAAA");
 
     private static function createFooterBlock()
     {
-        $callButton = ButtonComponentBuilder::builder()
-            ->setStyle(ComponentButtonStyle::LINK)
-            ->setHeight(ComponentButtonHeight::SM)
-            ->setAction(new UriTemplateActionBuilder('CALL', 'https://example.com'));
-        $websiteButton = ButtonComponentBuilder::builder()
-            ->setStyle(ComponentButtonStyle::LINK)
-            ->setHeight(ComponentButtonHeight::SM)
-            ->setAction(new UriTemplateActionBuilder('WEBSITE', 'https://example.com'));
-        $spacer = new SpacerComponentBuilder(ComponentSpaceSize::SM);
-
-        return BoxComponentBuilder::builder()
-            ->setLayout(ComponentLayout::VERTICAL)
-            ->setSpacing(ComponentSpacing::SM)
-            ->setFlex(0)
-            ->setContents([$callButton, $websiteButton, $spacer]);
+        return null;
     }
 }
