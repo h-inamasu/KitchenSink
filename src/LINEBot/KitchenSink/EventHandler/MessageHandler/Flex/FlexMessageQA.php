@@ -88,7 +88,7 @@ class FlexMessageQA
                     ->setAlign(ComponentAlign::CENTER)
                     ->setGravity(ComponentGravity::CENTER)
                     ->setWeight(ComponentFontWeight::BOLD)
-                    ->setText('カテゴリーを選択してください')
+                    ->setText('カテゴリーを選択してください'),
                 SeparatorComponentBuilder::builder()
                     ->setColor('#000000')
             ]);
