@@ -74,12 +74,12 @@ class FlexMessageQA
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
-                        BubbleContainerBuilder::builder()
-                            ->setStyles(self::createStyle())
-                            ->setHeader(self::createHeaderBlock())
-                            //->setHero(self::createHeroBlock())
-                            //->setFooter(self::createFooterBlock())
-                            ->setBody(self::createBodyBlock()),
+                BubbleContainerBuilder::builder()
+                    ->setStyles(self::createStyle())
+                    ->setHeader(self::createHeaderBlock())
+                    //->setHero(self::createHeroBlock())
+                    //->setFooter(self::createFooterBlock())
+                    ->setBody(self::createBodyBlock())
             );
     }
 
