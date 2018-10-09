@@ -71,6 +71,8 @@ class FlexMessageQA
 
     private static function get()
     {
+
+error_log("-----------------------------------");
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
