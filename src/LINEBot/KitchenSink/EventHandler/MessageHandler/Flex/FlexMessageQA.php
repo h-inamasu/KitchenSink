@@ -71,20 +71,19 @@ class FlexMessageQA
 
     private static function get()
     {
-
 error_log("-----------------------------------");
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
-                CarouselContainerBuilder::builder()
-                    ->setContents([
+                //CarouselContainerBuilder::builder()
+                //    ->setContents([
                         BubbleContainerBuilder::builder()
                             ->setStyles(self::createStyle())
                             ->setHeader(self::createHeaderBlock())
                             //->setHero(self::createHeroBlock())
                             //->setFooter(self::createFooterBlock())
                             ->setBody(self::createBodyBlock()),
-                    ])
+               //     ])
             );
     }
 
