@@ -84,7 +84,7 @@ class FollowEventHandler implements EventHandler
         //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
         $this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2);
         $this->bot->replyMessage(
-            $replyToken,
+            $this->followEvent->getReplyToken(),
             new TemplateMessageBuilder(
                 'ユーザー登録確認',
                 new ConfirmTemplateBuilder($text, [
