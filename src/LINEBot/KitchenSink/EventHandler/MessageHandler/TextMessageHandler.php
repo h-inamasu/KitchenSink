@@ -242,8 +242,8 @@ error_log("     row[name]==null");
                         $this->bot->replyMessage(
                             $replyToken,
                             new TemplateMessageBuilder(
-                                'Confirm alt text',
-                                new ConfirmTemplateBuilder($text, [
+                                '名前登録確認',
+                                new ConfirmTemplateBuilder("\"".$text."\""."\n".'で登録してよろしいですか？', [
                                     new PostbackTemplateActionBuilder('はい',"NAMEOK\n".$text,null),
                                     new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
                                 ])
