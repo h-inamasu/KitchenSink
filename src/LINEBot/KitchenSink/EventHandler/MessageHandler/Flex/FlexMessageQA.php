@@ -41,6 +41,7 @@ use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SeparatorComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
 
@@ -88,6 +89,8 @@ class FlexMessageQA
                     ->setGravity(ComponentGravity::CENTER)
                     ->setWeight(ComponentFontWeight::BOLD)
                     ->setText('カテゴリーを選択してください')
+                SeparatorComponentBuilder::builder()
+                    ->setColor('#000000')
             ]);
     }
 
