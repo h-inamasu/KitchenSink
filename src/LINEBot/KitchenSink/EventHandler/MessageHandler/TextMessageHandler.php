@@ -234,6 +234,7 @@ error_log("----- default");
 error_log("      userId: ".$userId);
                     error_log("=====> ".$row['userid']);
                     if ($row['name']==null) {
+error_log("     row[name]==null");
                         $stmt=$this->bot->pdo->prepare("UPDATE Users SET mode=:mode WHERE userId=:userId");
                         $stmt->bindParam(':userId',$userId,PDO::PARAM_STR);
                         $stmt->bindValue(':mode',2,PDO::PARAM_INT);
