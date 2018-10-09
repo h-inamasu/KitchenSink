@@ -60,15 +60,12 @@ class FlexMessageQA
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
-                CarouselContainerBuilder::builder()
-                ->setContents([
                 BubbleContainerBuilder::builder()
                     ->setStyles(self::createStyle())
                     ->setHeader(self::createHeaderBlock())
                     //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
                     //->setFooter(self::createFooterBlock())
-                ])
             );
     }
 
@@ -77,12 +74,14 @@ class FlexMessageQA
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
+                CarouselContainerBuilder::builder()->setContents([
                 BubbleContainerBuilder::builder()
                     ->setStyles(self::createStyle())
                     ->setHeader(self::createHeaderBlock())
                     //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
                     //->setFooter(self::createFooterBlock())
+                ])
             );
     }
 
