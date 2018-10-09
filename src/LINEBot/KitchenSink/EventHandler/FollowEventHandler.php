@@ -88,7 +88,7 @@ class FollowEventHandler implements EventHandler
             new TemplateMessageBuilder(
                 'ユーザー登録確認',
                 new ConfirmTemplateBuilder($text, [
-                    new PostbackTemplateActionBuilder('はい',"NAMEOK\n".$text,null),
+                    new PostbackTemplateActionBuilder('はい','NAMEOK',null),
                     new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
                 ])
            )
