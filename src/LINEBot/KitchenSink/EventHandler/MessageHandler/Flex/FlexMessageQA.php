@@ -69,6 +69,7 @@ class FlexMessageQA
             );
     }
 
+    /*
     private static function get2()
     {
 error_log("-----------------------------------");
@@ -86,6 +87,7 @@ error_log("-----------------------------------");
                //     ])
             );
     }
+    */
 
     private static function createStyle()
     {
