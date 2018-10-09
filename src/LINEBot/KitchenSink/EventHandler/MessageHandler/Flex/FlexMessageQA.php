@@ -90,6 +90,7 @@ class FlexMessageQA
                     ->setWeight(ComponentFontWeight::BOLD)
                     ->setText('カテゴリーを選択してください'),
                 SeparatorComponentBuilder::builder()
+                    ->setMargin(ComponentMargin::MD)
                     ->setColor('#000000')
             ]);
     }
