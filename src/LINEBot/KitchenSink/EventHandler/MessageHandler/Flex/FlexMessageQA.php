@@ -79,7 +79,7 @@ class FlexMessageQA
                     ->setHeader(self::createHeaderBlock())
                     //->setHero(self::createHeroBlock())
                     //->setFooter(self::createFooterBlock())
-                    ->setBody(self::createBodyBlock())
+                    ->setBody(self::createBodyBlock()),
             );
     }
 
