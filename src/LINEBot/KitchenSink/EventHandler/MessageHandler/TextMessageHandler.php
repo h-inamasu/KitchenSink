@@ -243,13 +243,35 @@ error_log("     row[name]==null");
                             $replyToken,
                             new TemplateMessageBuilder(
                                 '名前登録確認',
-                                new ConfirmTemplateBuilder("\"".$text."\""."\n".'で登録してよろしいですか？', [
+                                new ConfirmTemplateBuilder('お名前を'."\n"."\"".$text."\""."\n".'で登録してよろしいですか？', [
                                     new PostbackTemplateActionBuilder('はい',"NAMEOK\n".$text,null),
                                     new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
                                 ])
                             )
                         );
                         error_log("XXXXXXXXXXX");
+                    } else if ($row['postalcode']==null) {
+                        $this->bot->replyMessage(
+                            $replyToken,
+                            new TemplateMessageBuilder(
+                                '郵便番号登録確認',
+                                new ConfirmTemplateBuilder('郵便番号を'."\n"."\"".$text."\""."\n".'で登録してよろしいですか？', [
+                                    new PostbackTemplateActionBuilder('はい',"NAMEOK\n".$text,null),
+                                    new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
+                                ])
+                            )
+                        );
+                    } else if ($row['telephonenumber']==null) {
+                        $this->bot->replyMessage(
+                            $replyToken,
+                            new TemplateMessageBuilder(
+                                '電話番号登録確認',
+                                new ConfirmTemplateBuilder('電話番号を'."\n"."\"".$text."\""."\n".'で登録してよろしいですか？', [
+                                    new PostbackTemplateActionBuilder('はい',"NAMEOK\n".$text,null),
+                                    new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
+                                ])
+                            )
+                        );
                     }
                 }
                 $this->echoBack($replyToken, $text);
