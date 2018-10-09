@@ -81,15 +81,16 @@ class FollowEventHandler implements EventHandler
                   "またLINEから灯油のご注文も可能となりましたので、是非ご利用ください！";
         $message2="まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
         $message3="まずはお名前をご入力ください。";
-        //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
         $this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2);
         $this->bot->pushMessage(
             $userId,
             new TemplateMessageBuilder(
-                'Confirm alt text',
-                    new ConfirmTemplateBuilder('Do it?', [
-                        new MessageTemplateActionBuilder('Yes', 'Yes!'),
-                        new MessageTemplateActionBuilder('No', 'No!'),
+                'ユーザー登録確認',
+                    new ConfirmTemplateBuilder('ユーザー登録を行いますか？', [
+                        new PostbackTemplateActionBuilder('はい',"NAMEOK\n",null),
+                        new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
+                        //new MessageTemplateActionBuilder('Yes', 'Yes!'),
+                        //new MessageTemplateActionBuilder('No', 'No!'),
                     ])
                 )
             );
