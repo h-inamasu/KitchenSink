@@ -44,6 +44,7 @@ use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SeparatorComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
 
 use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 
@@ -56,6 +57,7 @@ class FlexMessageQA
      */
     public static function get()
     {
+        return get2();
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
@@ -65,6 +67,23 @@ class FlexMessageQA
                     //->setHero(self::createHeroBlock())
                     ->setBody(self::createBodyBlock())
                     //->setFooter(self::createFooterBlock())
+            );
+    }
+
+    private static function get2()
+    {
+        return FlexMessageBuilder::builder()
+            ->setAltText('お問い合わせ')
+            ->setContents(
+                CarouselContainerBuilder::builder()
+                    ->setContents([
+                        BubbleContainerBuilder::builder()
+                            ->setStyles(self::createStyle())
+                            ->setHeader(self::createHeaderBlock())
+                            //->setHero(self::createHeroBlock())
+                            ->setBody(self::createBodyBlock())
+                            //->setFooter(self::createFooterBlock())
+                    ])
             );
     }
 
