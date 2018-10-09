@@ -82,7 +82,7 @@ class FollowEventHandler implements EventHandler
         $message2="まずはご利用頂くにあたり、お客様情報のご入力をお願いいたします。";
         $message3="まずはお名前をご入力ください。";
         //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
-        ..$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2);
+        //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2);
         $this->bot->replyMessage(
             $this->followEvent->getReplyToken(),
             new TemplateMessageBuilder(
