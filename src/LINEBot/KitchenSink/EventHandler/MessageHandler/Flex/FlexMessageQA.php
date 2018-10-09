@@ -55,9 +55,8 @@ class FlexMessageQA
      *
      * @return \LINE\LINEBot\MessageBuilder\FlexMessageBuilder
      */
-    public static function get()
+    public static function _get()
     {
-        return get2();
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
             ->setContents(
@@ -70,7 +69,7 @@ class FlexMessageQA
             );
     }
 
-    private static function get2()
+    private static function get()
     {
         return FlexMessageBuilder::builder()
             ->setAltText('お問い合わせ')
