@@ -83,16 +83,16 @@ class FollowEventHandler implements EventHandler
         $message3="まずはお名前をご入力ください。";
         //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
         //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2);
-                $this->bot->replyMessage(
-                    $this->followEvent->getReplyToken(),
-                    new TemplateMessageBuilder(
-                        'Confirm alt text',
-                        new ConfirmTemplateBuilder('Do it?', [
-                            new MessageTemplateActionBuilder('Yes', 'Yes!'),
-                            new MessageTemplateActionBuilder('No', 'No!'),
-                        ])
-                    )
-                );
+        $this->bot->replyMessage(
+            $this->followEvent->getReplyToken(),
+            new TemplateMessageBuilder(
+                'Confirm alt text',
+                    new ConfirmTemplateBuilder('Do it?', [
+                        new MessageTemplateActionBuilder('Yes', 'Yes!'),
+                        new MessageTemplateActionBuilder('No', 'No!'),
+                    ])
+                )
+            );
 error_log("0000000000");
 
         error_log("----- Richmenu");
