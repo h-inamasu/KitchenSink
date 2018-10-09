@@ -28,6 +28,9 @@ use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
 use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
 
+use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder;
+
 class FollowEventHandler implements EventHandler
 {
     /** @var LINEBot $bot */
@@ -80,14 +83,15 @@ class FollowEventHandler implements EventHandler
         $message3="まずはお名前をご入力ください。";
         //$this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2,$message3);
         $this->bot->replyText($this->followEvent->getReplyToken(),$message1,$message2);
-        $this->bot->replyMessage($this->followEvent->getReplyToken(),
-                                 new TemplateMessageBuilder(
-                                    'ユーザー登録確認',
-                                    new ConfirmTemplateBuilder('ユーザー登録を行いますか?',[
-                                        new PostbackTemplateActionBuilder('はい','action=regconfirm&message=ok',null),
-                                        new PostbackTemplateActionBuilder('いいえ','action=regconfirm&message=no',null),
-                                    ])
-                                )
+        $this->bot->replyMessage(
+            $replyToken,
+            new TemplateMessageBuilder(
+                'ユーザー登録確認',
+                new ConfirmTemplateBuilder($text, [
+                    new PostbackTemplateActionBuilder('はい',"NAMEOK\n".$text,null),
+                    new PostbackTemplateActionBuilder('いいえ','NAMECANCEL',null),
+                ])
+           )
         );
 error_log("0000000000");
 
