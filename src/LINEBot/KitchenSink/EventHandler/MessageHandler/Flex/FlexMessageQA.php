@@ -110,12 +110,12 @@ class FlexMessageQA
         $category1=TextComponentBuilder::builder()
             ->setText('カテゴリー 1')
             ->setSize(ComponentFontSize::LG)
-            ->setMargin(ComponentMargin::LG)
+            ->setMargin(ComponentMargin::MD)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY1'));
         $category2=TextComponentBuilder::builder()
             ->setText('カテゴリー 2')
             ->setSize(ComponentFontSize::LG)
-            ->setMargin(ComponentMargin::MD)
+            ->setMargin(ComponentMargin::LG)
             ->setAction(new PostbackTemplateActionBuilder(null,'CATEGORY2'));
         $category3=TextComponentBuilder::builder()
             ->setText('カテゴリー 3')
